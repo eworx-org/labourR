@@ -22,7 +22,8 @@ URL: https://github.com/AleKoure/labourR
 BugReports: https://github.com/AleKoure/labourR/issues
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 VignetteBuilder: knitr
 Imports: 
     magrittr,

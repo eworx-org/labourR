@@ -12,3 +12,6 @@ os:
 r:
   - 3.4
   - release
+
+after_success:
+  - Rscript -e 'covr::codecov(type = "all")'
