@@ -6,7 +6,6 @@
 #' @export
 #'
 #' @import magrittr
-#' @import dplyr
 #' @examples
 printer <- function(x){
   paste0("x = ", x) %>%
