@@ -7,6 +7,8 @@
 
 [![Travis build
 status](https://travis-ci.org/AleKoure/labourR.svg?branch=master)](https://travis-ci.org/AleKoure/labourR)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/AleKoure/labourR?branch=master&svg=true)](https://ci.appveyor.com/project/AleKoure/labourR)
 <!-- badges: end -->
 
 The goal of labourR is to …
