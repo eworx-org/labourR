@@ -2,5 +2,4 @@
 
 export(hello)
 export(printer)
-import(dplyr)
 import(magrittr)
