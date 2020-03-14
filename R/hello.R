@@ -11,5 +11,6 @@
 #' hello("CoRona")
 #' }
 hello <- function(x) {
-  print(paste0("Hello, world!", x))
+  paste0("Hello, world!", x) %>%
+    print
 }
