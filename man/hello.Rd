@@ -10,7 +10,7 @@ hello(x)
 \item{x}{The name}
 }
 \value{
-The output \code{\link{print}}
+The output \code{\link{print}} and of \code{\link{print}}
 }
 \description{
 My Hello

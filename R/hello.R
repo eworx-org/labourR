@@ -2,7 +2,7 @@
 #'
 #' @param x The name
 #'
-#' @return The output \code{\link{print}}
+#' @return The output \code{\link{print}} and of \code{\link{print}}
 #' @export
 #'
 #' @examples
@@ -10,16 +10,18 @@
 #' \dontrun{
 #' hello("CoRona")
 #' }
-#' hello2("aaaa")
-#' \dontrun{
-#' hello2("CoRona")
-#' }
 hello <- function(x) {
   paste0("Hello, world!", x) %>%
     print
 }
 
+#' @section
+#' hello2("aaaa")
+#' \dontrun{
+#' hello2("CoRona")
+#' }
+
 hello2 <- function(x) {
-  paste0("Hello, world!", x) %>%
+  paste0("Hello, world2!", x) %>%
     print
 }

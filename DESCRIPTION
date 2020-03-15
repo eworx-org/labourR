@@ -30,3 +30,4 @@ Imports:
     magrittr,
     ggplot2,
     dplyr
+Depends: R (>= 2.10)
