@@ -10,6 +10,10 @@
 #' \dontrun{
 #' hello("CoRona")
 #' }
+#' hello2("aaaa")
+#' \dontrun{
+#' hello2("CoRona")
+#' }
 hello <- function(x) {
   paste0("Hello, world!", x) %>%
     print
