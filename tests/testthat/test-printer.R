@@ -12,5 +12,7 @@ test_that("I psrinetr Ok", {
   y <- hello(x)
   expect_equal(class(y), "character")
 
-})
+  y <- hello2(x)
+  expect_equal(class(y), "character")
 
+})
