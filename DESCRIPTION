@@ -23,7 +23,8 @@ BugReports: https://github.com/AleKoure/labourR/issues
 Suggests: 
     knitr,
     rmarkdown,
-    covr
+    covr,
+    testthat
 VignetteBuilder: knitr
 Imports: 
     magrittr,
