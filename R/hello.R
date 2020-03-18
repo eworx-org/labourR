@@ -22,6 +22,6 @@ hello <- function(x) {
 #' }
 
 hello2 <- function(x) {
-  paste0("Hello, world2!", x) %>%
+  paste0("Konnichi wa!", x) %>%
     print
 }
