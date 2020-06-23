@@ -7,6 +7,12 @@ warnings_are_errors: true
 
 os:
   - linux
+  - osx
+
+addons:
+  apt:
+    packages:
+      - libprotobuf-dev protobuf-compiler
 
 r:
   - 3.4
