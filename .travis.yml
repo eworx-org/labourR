@@ -13,9 +13,11 @@ addons:
   apt:
     packages:
       - libprotobuf-dev protobuf-compiler
+=======
 
 r:
   - 3.4
+  - oldrel
   - release
   - devel
 
