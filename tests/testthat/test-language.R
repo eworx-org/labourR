@@ -13,5 +13,7 @@ test_that("Is language identify Ok", {
   y <- identify_language(txt, "both")
   expect_equal(class(y), "character")
 
+  expect_error(identify_language(txt, "foo"))
+
 })
 

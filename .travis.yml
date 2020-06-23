@@ -14,6 +14,9 @@ addons:
     packages:
       - libprotobuf-dev protobuf-compiler
 
+brew_packages:
+  - protobuf
+
 r:
   - 3.4
   - oldrel
