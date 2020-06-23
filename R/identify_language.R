@@ -29,6 +29,5 @@ identify_language <- function(text, alg = "cld2"){
     res_cld3 <- cld3::detect_language(text)
     return(ifelse(res_cld2 == res_cld3, res_cld2, NA))
   }
-  errorCondition("Provide a valid option for alg argument")
-
+  stop("Provide a valid option for alg argument")
 }
