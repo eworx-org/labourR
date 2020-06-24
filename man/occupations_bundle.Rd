@@ -9,8 +9,7 @@ A data.table with 4 elements, which are:
 \describe{
 \item{language}{Languages covered by the classification.}
 \item{conceptUri}{Uniform Resource Identifier of occupations.}
-\item{iscoGroup} Four-level classification of occupation groups,
-see \href{https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_}{ISCO}.
+\item{iscoGroup}{Four-level classification of occupation groups, see \href{https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_}{ISCO}.}
 \item{text}{Free text of preffered name and alternative names of ESCO occupation concepts.}
 }
 }
