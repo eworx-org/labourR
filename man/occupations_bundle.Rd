@@ -21,7 +21,7 @@ The occupations pillar is one of the three pillars of \href{https://ec.europa.eu
 the occupation concepts. It uses hierarchical relationships between them, metadata as well as mappings to the International Standard
 Classification of Occupations \href{https://ec.europa.eu/esco/portal/escopedia/Occupation}{ISCO} in order to structure the occupations.
 The descriptions of each concept is provided only in english. Since the purpose of this package is multilingual analysysis of free text
-labour data it will be discarded for "symmetry" of information among the given languages.
+labour data it will be discarded for *symmetry of information* among the given languages.
 
 * The ESCO version used is ESCO v1 1.0.3 retrieved at 11/12/2019.
 }

@@ -30,4 +30,5 @@ Depends: R (>= 2.10)
 Imports: 
     cld2,
     cld3,
-    data.table
+    data.table,
+    magrittr
