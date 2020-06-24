@@ -21,3 +21,8 @@ r:
 
 after_success:
   - Rscript -e 'covr::codecov(type = "all")'
+
+matrix:
+  exclude:
+    - r: devel
+      os: osx
