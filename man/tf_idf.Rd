@@ -15,7 +15,7 @@ tf_idf(
 )
 }
 \arguments{
-\item{corpus}{input data, with an id column and a text column. Can be a data.frame or a data.table.}
+\item{corpus}{input data, with an id column and a text column. Can be of type data.frame or data.table.}
 
 \item{stopwords}{character vector of stopwords. Stopwords are filtered out before calculating numerical statistics.}
 

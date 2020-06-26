@@ -6,7 +6,7 @@
 #' in the corpus that contain the word. Variations of the tf–idf are often used to estimate a document's relevance given a
 #' free-text query.
 #'
-#' @param corpus input data, with an id column and a text column. Can be a data.frame or a data.table.
+#' @param corpus input data, with an id column and a text column. Can be of type data.frame or data.table.
 #' @param stopwords character vector of stopwords. Stopwords are filtered out before calculating numerical statistics.
 #' @param id_col input data column name with the ids of the documents.
 #' @param text_col input data column name with the documents.
@@ -32,12 +32,8 @@
 #' }
 tf_idf <- function(corpus, stopwords = NULL, id_col = "id", text_col = "text", tf_weight = "double_norm", idf_weight = "idf_smooth", min_chars = 2) {
 
-  term <- NULL
-  tf <- NULL
-  term_count <- NULL
-  idf <- NULL
-  docFreq <- NULL
-  tfIdf <- NULL
+  # due to NSE notes in R CMD check
+  NULL -> term -> tf -> term_count -> idf -> docFreq -> tfIdf
 
   corpus <- as.data.table(corpus)
 
