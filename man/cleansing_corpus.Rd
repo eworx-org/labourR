@@ -2,35 +2,36 @@
 % Please edit documentation in R/cleansing_corpus.R
 \name{cleansing_corpus}
 \alias{cleansing_corpus}
-\title{Title}
+\title{Cleansing Corpus}
 \usage{
 cleansing_corpus(
   text,
-  rem_newline = TRUE,
-  rem_nonalphanum = TRUE,
-  rem_longwords = TRUE,
-  rem_space = TRUE,
+  escape_chars = TRUE,
+  nonalphanum = TRUE,
+  longwords = TRUE,
+  whitespace = TRUE,
   tolower = TRUE
 )
 }
 \arguments{
-\item{text}{character vector}
+\item{text}{Character vector of free text to be cleansed.}
 
-\item{rem_newline}{boolean}
+\item{escape_chars}{If TRUE removes escape characters for `slash n`, `slash r` and `slash t`.}
 
-\item{rem_nonalphanum}{boolean}
+\item{nonalphanum}{If TRUE removes non-alphanumeric characters.}
 
-\item{rem_longwords}{boolean}
+\item{longwords}{If TRUE removes words with more than 30 characters.}
 
-\item{rem_space}{boolean}
+\item{whitespace}{If TRUE removes excess whitespace.}
 
-\item{tolower}{boolean}
+\item{tolower}{If TRUE turns letters to lower.}
 }
 \value{
-A character vector
+A character vector of the leansed text.
 }
 \description{
-Title
+The function performs text cleansing by removing escape characters, non alphanumeric,
+long-words, excess space and turns all letters to lower case.
 }
 \examples{
 txt <- "It has roots in a piece of classical Latin literature from 45 BC"

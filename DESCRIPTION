@@ -31,4 +31,5 @@ Imports:
     cld2,
     cld3,
     data.table,
-    magrittr
+    magrittr,
+    stopwords

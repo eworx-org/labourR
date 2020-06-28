@@ -15,19 +15,19 @@ tf_idf(
 )
 }
 \arguments{
-\item{corpus}{input data, with an id column and a text column. Can be of type data.frame or data.table.}
+\item{corpus}{Input data, with an id column and a text column. Can be of type data.frame or data.table.}
 
-\item{stopwords}{character vector of stopwords. Stopwords are filtered out before calculating numerical statistics.}
+\item{stopwords}{A character vector of stopwords. Stopwords are filtered out before calculating numerical statistics.}
 
-\item{id_col}{input data column name with the ids of the documents.}
+\item{id_col}{Input data column name with the ids of the documents.}
 
-\item{text_col}{input data column name with the documents.}
+\item{text_col}{Input data column name with the documents.}
 
-\item{tf_weight}{weighting scheme of term frequency. Choices are `raw_count`, `double_norm` or `log_norm` for raw count, double normalization at 0.5 and log normalization respectively.}
+\item{tf_weight}{Weighting scheme of term frequency. Choices are `raw_count`, `double_norm` or `log_norm` for raw count, double normalization at 0.5 and log normalization respectively.}
 
-\item{idf_weight}{weighting scheme of inverse document frequency. Choices are `idf` and `idf_smooth` for inverse document frequency and inverse document frequency smooth respectively.}
+\item{idf_weight}{Weighting scheme of inverse document frequency. Choices are `idf` and `idf_smooth` for inverse document frequency and inverse document frequency smooth respectively.}
 
-\item{min_chars}{words with less characters than `min_chars` are filtered out before calculating numerical statistics.}
+\item{min_chars}{Words with less characters than `min_chars` are filtered out before calculating numerical statistics.}
 }
 \value{
 A data.table with three columns, namely `class` derived from given document ids, `term` and `tfIdf`.
@@ -45,7 +45,9 @@ The reduction of uncertainty...
 \examples{
 \dontrun{
 library(data.table)
-corpus <- occupations_bundle[language == "en"][ , .(conceptUri, text)]
+corpus <- occupations_bundle[, text := paste(preferredLabel, altLabels)]
+corpus <- occupations_bundle[, text := cleansing_corpus(text)]
+corpus <- corpus[ , .(conceptUri, text)]
 setnames(corpus, c("id", "text"))
 tf_idf(corpus)
 }

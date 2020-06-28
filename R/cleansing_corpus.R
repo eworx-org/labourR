@@ -1,13 +1,16 @@
-#' Title
+#' Cleansing Corpus
 #'
-#' @param text character vector
-#' @param rem_newline boolean
-#' @param rem_nonalphanum boolean
-#' @param rem_longwords boolean
-#' @param rem_space boolean
-#' @param tolower boolean
+#' The function performs text cleansing by removing escape characters, non alphanumeric,
+#' long-words, excess space and turns all letters to lower case.
 #'
-#' @return A character vector
+#' @param text Character vector of free text to be cleansed.
+#' @param escape_chars If TRUE removes escape characters for `slash n`, `slash r` and `slash t`.
+#' @param nonalphanum If TRUE removes non-alphanumeric characters.
+#' @param longwords If TRUE removes words with more than 30 characters.
+#' @param whitespace If TRUE removes excess whitespace.
+#' @param tolower If TRUE turns letters to lower.
+#'
+#' @return A character vector of the leansed text.
 #' @export
 #'
 #' @examples
@@ -15,20 +18,20 @@
 #' cleansing_corpus(txt)
 cleansing_corpus <- function(
   text,
-  rem_newline = TRUE,
-  rem_nonalphanum = TRUE,
-  rem_longwords = TRUE,
-  rem_space = TRUE,
+  escape_chars = TRUE,
+  nonalphanum = TRUE,
+  longwords = TRUE,
+  whitespace = TRUE,
   tolower = TRUE
 ){
 
   if(class(text) != "character")
     stop("text must be character vector")
-
-  if(rem_newline)text <- gsub("[\r\n\t]", " ", text)
-  if(rem_nonalphanum)text <- gsub("[^[:alnum:]]", " ", text) # removing non-alphanumeric
-  if(rem_longwords)text <- gsub("\\w{35,}", " ", text) ## Removing words with more than 30 letters
-  if(rem_space)text <- gsub("\\s+", " ", text)  # removing excess space
+  if(escape_chars)text <- gsub("[\r\n\t]", " ", text)
+  if(nonalphanum)text <- gsub("[^[:alnum:]]", " ", text) # removing non-alphanumeric
+  if(longwords)text <- gsub("\\w{35,}", " ", text) ## Removing words with more than 30 letters
+  if(whitespace)text <- gsub("\\s+", " ", text)  # removing excess space
   if(tolower)text <- tolower(text)
   trimws(text)
+
 }
