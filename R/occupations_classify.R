@@ -18,7 +18,7 @@
 #' First, the input text is cleansed and tokenized. The tokens are then matched with the ESCO occupations vocabulary, created from
 #' the \link[=occupations_bundle]{preferred and alternative labels} of the occupations, and joined with the \link[=tf_idf]{tfidf}
 #' weighted tokens of the ESCO occupations. After the terms are joined, the suggested ESCO occupations are retrieved using a weighted sum model.
-#' If a ISCO level was specified, the K-Nearest Neighbors algorithm is used to determine the suggested occupation of the requested ISCO level,
+#' If an ISCO level was specified, the K-Nearest Neighbors algorithm is used to determine the suggested occupation of the requested ISCO level,
 #' classified by a plurality vote of its neighbors.
 #'
 #' Before the suggestions are returned, the preferred label of each suggested occupation is added to the result, using the
