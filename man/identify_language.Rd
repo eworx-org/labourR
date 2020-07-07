@@ -23,7 +23,7 @@ A character vector with ISO-639-1 two-letter language codes.
 \description{
 This function performs language detection by combining Compact Language Detector 2 and 3 from CRAN libraries \code{\link{cld2}} and \code{\link{cld3}}.
 It is vectorised and guesses the language of each string. Note that it is not designed to do well on very short text,
-lists of proper names, part numbers, etc. CLD2 has the hightest F1 score and is an order of magnitude faster than CLD3.
+lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is an order of magnitude faster than CLD3.
 }
 \examples{
 txt <- c("English is a West Germanic language ", "In espaniol, le lingua castilian")

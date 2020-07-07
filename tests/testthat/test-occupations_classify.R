@@ -33,7 +33,7 @@ test_that("Is occupations classification Ok", {
 
   y <- classify_occupation(
     corpus = corpus,
-    string_dist = 2
+    string_dist = "osa"
   )
 
   expect_s3_class(y, "data.frame")
