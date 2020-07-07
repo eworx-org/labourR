@@ -1,1 +1,15 @@
 destination: docs
+developers:
+  Andreas Babouris:
+    href: https://www.eworx.gr/
+  Alexandros Kouretsis:
+    href: https://scholar.google.gr/citations?user=9UTGbIAAAAAJ&hl=en
+
+  Petros Morfiris:
+
+  Konstantinos Papageorgiou:
+
+  Eworx S.A.:
+    href: https://www.rstudio.com
+    html: <img src="https://www.tidyverse.org/rstudio-logo.svg" height="24" >
+

@@ -2,7 +2,14 @@ Package: labourR
 Type: Package
 Title: labourR: Classify multilingual labour market free-text to ESCO hierarchical ontologies
 Version: 0.1.0
-Author: Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou, Eworx S.A.
+Authors@R: c(person("Andreas", "Babouris", email = "aba@eworx.gr", role = "aut"),
+             person("Eworx S.A", role = "cph"),
+             person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),
+             person("Petros", "Morfiris", email = "pem@eworx.gr", role = "aut"),
+             person("Konstantinos", "Papageorgiou", email = "melt@eworx.gr", role = "aut"),
+             person("Stavros", "Ladas", email = "sl@eworx.gr", role = "ctb"),
+             person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb")
+            )
 Maintainer: Alexandros Kouretsis <ako@eworx.gr>
 Description: Statistically analysys and processing of data related
     to skills, competences, qualifications and occupations provide

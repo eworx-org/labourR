@@ -73,7 +73,7 @@ corpus <- data.table(
 )
 ```
 
-One functionality the package provides is language identification, through the cld2 and cld3 packages.
+One functionality the package provides is language identification through the cld2 and cld3 packages, a Naive Bayes and Neural Network classifier respectively.
 
 ```{r italian_language_identification}
 corpus[, language := identify_language(text)]
