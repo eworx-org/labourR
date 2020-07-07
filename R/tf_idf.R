@@ -13,6 +13,7 @@
 #' @param tf_weight Weighting scheme of term frequency. Choices are `raw_count`, `double_norm` or `log_norm` for raw count, double normalization at 0.5 and log normalization respectively.
 #' @param idf_weight Weighting scheme of inverse document frequency. Choices are `idf` and `idf_smooth` for inverse document frequency and inverse document frequency smooth respectively.
 #' @param min_chars Words with less characters than `min_chars` are filtered out before calculating numerical statistics.
+#' @param norm Boolean value for document normalization.
 #'
 #' @return A data.table with three columns, namely `class` derived from given document ids, `term` and `tfIdf`.
 #'
@@ -39,7 +40,8 @@ tf_idf <- function(
   text_col = "text",
   tf_weight = "double_norm",
   idf_weight = "idf_smooth",
-  min_chars = 2
+  min_chars = 2,
+  norm = TRUE
 ) {
 
   # due to NSE notes in R CMD check
@@ -64,6 +66,9 @@ tf_idf <- function(
   if(idf_weight == "idf_smooth") idfDT[, idf :=  log(length(unique(tokensDT$class)) / (docFreq + 1)) + 1]
   if(idf_weight == "idf") idfDT[, idf :=  log(length(unique(tokensDT$class)) / docFreq)]
 
-  merge(tfDT, idfDT, on = "term")[, tfIdf := tf * idf][, list(class, term, tfIdf)]
+  res <- merge(tfDT, idfDT, on = "term")[, tfIdf := tf * idf][, list(class, term, tfIdf)]
+  if(norm)
+    res[, tfIdf := tfIdf / sum(tfIdf), by = "class"]
 
+  res
 }

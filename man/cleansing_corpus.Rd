@@ -16,22 +16,22 @@ cleansing_corpus(
 \arguments{
 \item{text}{Character vector of free text to be cleansed.}
 
-\item{escape_chars}{If TRUE removes escape characters for `slash n`, `slash r` and `slash t`.}
+\item{escape_chars}{If TRUE, removes escape characters for `slash n`, `slash r` and `slash t`.}
 
-\item{nonalphanum}{If TRUE removes non-alphanumeric characters.}
+\item{nonalphanum}{If TRUE, removes non-alphanumeric characters.}
 
-\item{longwords}{If TRUE removes words with more than 30 characters.}
+\item{longwords}{If TRUE, removes words with more than 35 characters.}
 
-\item{whitespace}{If TRUE removes excess whitespace.}
+\item{whitespace}{If TRUE, removes excess whitespace.}
 
-\item{tolower}{If TRUE turns letters to lower.}
+\item{tolower}{If TRUE, turns letters to lower.}
 }
 \value{
-A character vector of the leansed text.
+A character vector of the cleansed text.
 }
 \description{
 The function performs text cleansing by removing escape characters, non alphanumeric,
-long-words, excess space and turns all letters to lower case.
+long-words, excess space, and turns all letters to lower case.
 }
 \examples{
 txt <- "It has roots in a piece of classical Latin literature from 45 BC"

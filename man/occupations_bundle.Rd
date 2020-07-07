@@ -5,7 +5,7 @@
 \alias{occupations_bundle}
 \title{ESCO occupations bundle}
 \format{
-A data.table with 4 elements, which are:
+A data.table with 5 variables, which are:
 \describe{
 \item{conceptUri}{Uniform Resource Identifier of occupations.}
 \item{iscoGroup}{Four-level classification of occupation groups, see \href{https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_}{ISCO}.}

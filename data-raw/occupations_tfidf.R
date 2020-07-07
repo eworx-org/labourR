@@ -24,7 +24,7 @@ occupations_bundle <- esco_bundle[, .(language, conceptUri, iscoGroup, text)]
 tfidf_tokens <- lapply(esco_languages, function(lang){
   corpus <- occupations_bundle[language == lang, list(conceptUri, text)]
   corpus[, text := cleansing_corpus(text)]
-  tf_idf(corpus, id_col = "conceptUri")
+  tf_idf(corpus, id_col = "conceptUri", stopwords = get_stopwords(lang))
 })
 names(tfidf_tokens) <- esco_languages
 

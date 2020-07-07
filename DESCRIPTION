@@ -32,4 +32,5 @@ Imports:
     cld3,
     data.table,
     magrittr,
-    stopwords
+    stopwords,
+    stringdist

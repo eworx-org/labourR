@@ -11,7 +11,8 @@ tf_idf(
   text_col = "text",
   tf_weight = "double_norm",
   idf_weight = "idf_smooth",
-  min_chars = 2
+  min_chars = 2,
+  norm = TRUE
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ tf_idf(
 \item{idf_weight}{Weighting scheme of inverse document frequency. Choices are `idf` and `idf_smooth` for inverse document frequency and inverse document frequency smooth respectively.}
 
 \item{min_chars}{Words with less characters than `min_chars` are filtered out before calculating numerical statistics.}
+
+\item{norm}{Boolean value for document normalization.}
 }
 \value{
 A data.table with three columns, namely `class` derived from given document ids, `term` and `tfIdf`.
