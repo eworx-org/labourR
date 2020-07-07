@@ -7,13 +7,13 @@
 get_language_code(string)
 }
 \arguments{
-\item{string}{Filepath with a language code as given by esco downloadable .CSVs.}
+\item{string}{Filepath with a language code as given by ESCO downloadable .CSVs.}
 }
 \value{
 A character vector with two-letter language codes.
 }
 \description{
-Occupations' labels and structure are exposed throught the ESCO web portal. This function retrieves languages
+Occupations' labels and structure are exposed at the ESCO web portal. This function retrieves languages
 from the downloadable CSVs, see \href{https://ec.europa.eu/esco/portal/escopedia/ESCO_languages}{escopedia}.
 }
 \examples{

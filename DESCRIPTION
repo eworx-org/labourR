@@ -1,6 +1,6 @@
 Package: labourR
 Type: Package
-Title: labourR: Classify multilingual labour market free-text to ESCO hierarchical ontologies.
+Title: labourR: Classify multilingual labour market free-text to ESCO hierarchical ontologies
 Version: 0.1.0
 Author: Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou, Eworx S.A.
 Maintainer: Alexandros Kouretsis <ako@eworx.gr>

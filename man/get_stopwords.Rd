@@ -14,7 +14,7 @@ Character vector with the stopwords or NULL if the language code is unknown.
 }
 \description{
 The functions retrieves stopwords from the \code{\link{stopwords}} package using the ISO-639-1 encoding.
-For miscellaneius languages \code{\link{data_stopwords_misc}} are used.
+For miscellaneous languages \code{\link{data_stopwords_misc}} are used.
 }
 \examples{
 get_stopwords("en")

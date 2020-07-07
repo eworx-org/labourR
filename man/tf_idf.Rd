@@ -36,14 +36,11 @@ tf_idf(
 A data.table with three columns, namely `class` derived from given document ids, `term` and `tfIdf`.
 }
 \description{
-Measure weighted amount of information conserning the specificity of terms in a corpus.
+Measure weighted amount of information concerning the specificity of terms in a corpus.
 Term frequency–Inverse document frequency is one of the most frequently applied weighting schemes in information retrieval systems.
-The tf–idf is a statistical measure proprtional to the number of times a word appears in the document, but is offset by the number of documents
+The tf–idf is a statistical measure proportional to the number of times a word appears in the document, but is offset by the number of documents
 in the corpus that contain the word. Variations of the tf–idf are often used to estimate a document's relevance given a
 free-text query.
-}
-\details{
-The reduction of uncertainty...
 }
 \examples{
 \dontrun{
