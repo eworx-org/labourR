@@ -1,5 +1,5 @@
 ---
-title: "occupations_retrieval"
+title: "Occupations Classification"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{occupations_retrieval}
@@ -7,13 +7,91 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
 
-```{r setup}
+This vignette will go into the details of the ESCO/ISCO hierarchical relationship and explain how the labourR package takes advantage of that relationship to suggest occupations for multilingual free-text vacancy data.
+
+## ESCO - ISCO relationship
+
+ESCO is the [multilingual](https://ec.europa.eu/esco/portal/escopedia/ESCO_languages) classification of European [Skills](https://ec.europa.eu/esco/portal/escopedia/Skill), [Competences](https://ec.europa.eu/esco/portal/escopedia/Competence), [Qualifications](https://ec.europa.eu/esco/portal/escopedia/Qualification) and [Occupations](https://ec.europa.eu/esco/portal/escopedia/Occupation). ESCO works as a dictionary, describing, identifying and classifying professional occupations, skills, and qualifications relevant for the EU labour market and education and training.  Those concepts and the relationships between them can be understood by electronic systems, which allows different online platforms to use ESCO for services like matching jobseekers to jobs on the basis of their skills, suggesting trainings to people who want to reskill or upskill etc.
+
+[ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_), on the other hand, the International Standard Classification of Occupations, is a four-level classification of occupation groups managed by the International Labour Organisation (ILO). Its structure follows a grouping by education level. The two latest versions of ISCO are ISCO-88 (dating from 1988) and ISCO-08 (dating from 2008).
+
+In ESCO, each occupation is mapped to exactly one ISCO-08 code. ISCO-08 can therefore be used as a hierarchical structure for the occupations pillar. ISCO-08 provides the top four levels for the occupations pillar. ESCO occupations are located at level 5 and lower.
+
+<img src="../man/figures/ESCO-ISCO hierarchy.svg" width="650"/>
+
+To find more about ESCO and its relationship with ISCO, visit [ESCOpedia](https://ec.europa.eu/esco/portal/escopedia/Main_Page), the online reference to the ESCO classification.
+
+## An introduction to the labourR package
+
+The goal of the labourR package is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to existing hierarchical ontologies like ESCO and ISCO, and showcase the importance of those classifications in understanding and analysing the labour market.
+
+In the following examples we will explain how we wap the vacancy data into the ESCO-ISCO official classification and how the classification process takes advantage of hierarchical structure to suggest occupations in both ESCO and ISCO.
+
+The function that classifies the input text takes as input the following variables:
+
+- The corpus containing the id and the text variables.
+
+- The name of the id and the text variables.
+
+- The language the text is in.
+
+- The number of suggestions you want the function to return.
+
+- The ISCO level of the suggested occupations. If it is 1-4, then only one suggestion is returned, the suggested isco Group, otherwise if NULL, the top num_leaves ESCO occupations are returned.
+
+The classification process goes as follows:
+
+- The input free-text is cleansed, using the cleansing corpus function in the labourR package, and tokenized, the same way the tfidf weighted tokens are calculated from the cleansed preferred and alternate labels of the ESCO occupations.
+
+- After the text cleansing and tokenization, the tokens are matched one-to-one with the ESCO vocabulary. If a string distance is given, the tokens that didn't match in the previous step are fuzzy matched with the vocabulary using the amatch function from the stringdist package.
+
+- After the matching process is done, the matched tokens for each id are joined with the tfidf tokens. Then, a weighted sum model is followed to determine the top ESCO occupations suggestions.
+
+- If an ISCO level was given, the K-Nearest Neighbors algorithm with K = num_leaves is used to determine the suggested occupation. The latter is classified by a plurality vote of its neighbors in the given ISCO hierarchical level.
+
+- Lastly, the preferred label is added next to each suggested ESCO occupation or ISCO group and the results are returned.
+
+```{r italian_occupations_example}
 library(labourR)
+library(data.table)
+library(magrittr)
+
+corpus <- data.table(
+  id = 1:4,
+  text = c(
+    "Insegnante di scuola primaria",
+    "Addetto al controllo e sicurezza",
+    "Sales and marketing assistant manager",
+    "Data Scientist"
+  )
+)
+```
+
+One functionality the package provides is language identification, through the cld2 and cld3 packages.
+```{r italian_language_identification}
+corpus[, language := identify_language(text)]
+```
+
+Using **num_leaves** equal to **10** and **isco_level** equal to **3**, the top **1** suggested level ISCO 3 occupation for each input free-text is returned:
+```{r isco3_examples_match}
+languages <- unique(corpus$language)
+suggestions <- lapply(languages, function(lang) {
+  classify_occupation(
+    corpus = corpus[language == lang],
+    lang = lang,
+    isco_level = 3,
+    num_leaves = 10
+  )
+}) %>% rbindlist
+```
+
+```{r isco3_examples_print, echo=FALSE}
+suggestions
 ```
