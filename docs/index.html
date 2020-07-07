@@ -63,10 +63,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/codebook.html">Codebook</a>
-    </li>
-    <li>
-      <a href="articles/occupations_retrieval.html">occupations_retrieval</a>
+      <a href="articles/occupations_retrieval.html">Occupations Classification</a>
     </li>
   </ul>
 </li>
@@ -95,78 +92,51 @@
 <a href="#labourr" class="anchor"></a>labourR</h1></div>
 <!-- badges: start -->
 
-<p>The goal of the labourR package is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to existing hierarchical ontologies like <a href="https://ec.europa.eu/esco/portal">ESCO</a>, the multilingual classification of European Skills, Competences, Qualifications and Occupations, and <a href="https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_">ISCO</a>, the International Standard Classification of Occupations, and showcase the importance of those classifications in understanding and analysing the labour market.</p>
+<p>The goal of labourR is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to hierarchical ontologies like <a href="https://ec.europa.eu/esco/portal">ESCO</a>, the multilingual classification of European Skills, Competences, Qualifications and Occupations, and <a href="https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_">ISCO</a>, the International Standard Classification of Occupations. Computations are vectorised and the <code>data.table</code> package is used for high performance and memory efficiency.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of labourR from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<p>You can install the released version of labourR from <a href="https://CRAN.R-project.org">CRAN</a> with,</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"labourR"</span>)</pre></div>
+<p>Installation requires the Protocol Buffers library. On Debian or Ubuntu install with,</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>sudo apt<span class="op">-</span>get install <span class="op">-</span>y libprotobuf<span class="op">-</span>dev protobuf<span class="op">-</span>compiler</span></code></pre></div>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">labourR</span>)
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">labourR</span>)
 <span class="no">corpus</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
   <span class="kw">id</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">3</span>,
   <span class="kw">text</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Data Scientist"</span>, <span class="st">"Junior Architect Engineer"</span>, <span class="st">"Cashier at McDonald's"</span>)
 )</pre></div>
 <ul>
-<li>If the ISCO level is not specified, the top num_leaves, in this case 5, suggested ESCO occupations are returned for each id:</li>
-</ul>
-<!-- end list --><div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
-<span class="co">#&gt;     id                           conceptUri</span>
-<span class="co">#&gt;  1:  1 258e46f9-0075-4a2e-adae-1ff0477e0f30</span>
-<span class="co">#&gt;  2:  1 1562c7a3-c7d9-419d-b9b6-db26610bcf84</span>
-<span class="co">#&gt;  3:  1 f470b785-643c-46f9-8b31-6085427ab7b8</span>
-<span class="co">#&gt;  4:  1 7086d0ca-1e77-4690-89c9-7ed1a0478fa3</span>
-<span class="co">#&gt;  5:  1 d3edb8f8-3a06-47a0-8fb9-9b212c006aa2</span>
-<span class="co">#&gt;  6:  2 76abbb82-c103-4d7a-a4c0-14dba4d6199a</span>
-<span class="co">#&gt;  7:  2 c8fa93eb-7c2c-42c3-b135-c2e825a6615e</span>
-<span class="co">#&gt;  8:  2 e12f08fb-4748-4388-9489-b647df60332a</span>
-<span class="co">#&gt;  9:  2 9dbbeb2c-0d51-4c03-8ef6-8dfa7360db22</span>
-<span class="co">#&gt; 10:  2 2f26a52b-cf45-4282-9138-478252161f00</span>
-<span class="co">#&gt; 11:  3 3f32394b-f1b1-48ef-96ee-74405fb7c6b6</span>
-<span class="co">#&gt; 12:  3 961cbd1f-2a9b-4756-b227-67a1c23c94b6</span>
-<span class="co">#&gt; 13:  3 2ff9e53c-6e7f-42af-8d71-b5dd7f283089</span>
-<span class="co">#&gt; 14:  3 b7fc1cd1-0d6d-4e9e-8a9f-c3270201be81</span>
-<span class="co">#&gt; 15:  3 2b871272-bd61-4206-bd1a-0b96d7023098</span>
-<span class="co">#&gt;                          preferredLabel</span>
-<span class="co">#&gt;  1:                      data scientist</span>
-<span class="co">#&gt;  2:             data warehouse designer</span>
-<span class="co">#&gt;  3: aeronautical information specialist</span>
-<span class="co">#&gt;  4:             data quality specialist</span>
-<span class="co">#&gt;  5:                        data analyst</span>
-<span class="co">#&gt;  6:              commissioning engineer</span>
-<span class="co">#&gt;  7:                       test engineer</span>
-<span class="co">#&gt;  8:                 hydropower engineer</span>
-<span class="co">#&gt;  9:             ship assistant engineer</span>
-<span class="co">#&gt; 10:            food production engineer</span>
-<span class="co">#&gt; 11:                     lottery cashier</span>
-<span class="co">#&gt; 12:                      casino cashier</span>
-<span class="co">#&gt; 13:                         bank teller</span>
-<span class="co">#&gt; 14:            foreign exchange cashier</span>
-<span class="co">#&gt; 15:                             cashier</span></pre></div>
-<ul>
-<li>Otherwise, if the ISCO level is specified, the top one suggested ISCO group is returned for each id:</li>
+<li>If the ISCO level is specified, the top suggested ISCO group is returned. <code>num_leaves</code> specifies the number of ESCO occupations used for the k-NN classifier to perform a plurality vote,</li>
 </ul>
 <!-- end list --><div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
 <span class="co">#&gt;    id iscoGroup                                          preferredLabel</span>
 <span class="co">#&gt; 1:  1       251       Software and applications developers and analysts</span>
 <span class="co">#&gt; 2:  2       214 Engineering professionals (excluding electrotechnology)</span>
 <span class="co">#&gt; 3:  3       523                              Cashiers and ticket clerks</span></pre></div>
-</div>
-<div id="contributors" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contributors" class="anchor"></a>Contributors</h2>
 <ul>
-<li>Alexandros Kouretsis - <a href="https://github.com/AleKoure">Github</a>
-</li>
-<li>Andreas Bampouris - <a href="https://github.com/andbamp">Github</a>
-</li>
-<li>Petros Morfiris - <a href="https://github.com/peterthunder">Github</a>
-</li>
-<li>Konstantinos Papageorgiou</li>
+<li>If the ISCO level is not specified, the top num_leaves, in this case 5, suggested ESCO occupations are returned for each id,</li>
 </ul>
+<!-- end list --><div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
+<span class="co">#&gt;     id                           conceptUri                      preferredLabel</span>
+<span class="co">#&gt;  1:  1 258e46f9-0075-4a2e-adae-1ff0477e0f30                      data scientist</span>
+<span class="co">#&gt;  2:  1 1562c7a3-c7d9-419d-b9b6-db26610bcf84             data warehouse designer</span>
+<span class="co">#&gt;  3:  1 f470b785-643c-46f9-8b31-6085427ab7b8 aeronautical information specialist</span>
+<span class="co">#&gt;  4:  1 7086d0ca-1e77-4690-89c9-7ed1a0478fa3             data quality specialist</span>
+<span class="co">#&gt;  5:  1 d3edb8f8-3a06-47a0-8fb9-9b212c006aa2                        data analyst</span>
+<span class="co">#&gt;  6:  2 76abbb82-c103-4d7a-a4c0-14dba4d6199a              commissioning engineer</span>
+<span class="co">#&gt;  7:  2 c8fa93eb-7c2c-42c3-b135-c2e825a6615e                       test engineer</span>
+<span class="co">#&gt;  8:  2 e12f08fb-4748-4388-9489-b647df60332a                 hydropower engineer</span>
+<span class="co">#&gt;  9:  2 9dbbeb2c-0d51-4c03-8ef6-8dfa7360db22             ship assistant engineer</span>
+<span class="co">#&gt; 10:  2 2f26a52b-cf45-4282-9138-478252161f00            food production engineer</span>
+<span class="co">#&gt; 11:  3 3f32394b-f1b1-48ef-96ee-74405fb7c6b6                     lottery cashier</span>
+<span class="co">#&gt; 12:  3 961cbd1f-2a9b-4756-b227-67a1c23c94b6                      casino cashier</span>
+<span class="co">#&gt; 13:  3 2ff9e53c-6e7f-42af-8d71-b5dd7f283089                         bank teller</span>
+<span class="co">#&gt; 14:  3 b7fc1cd1-0d6d-4e9e-8a9f-c3270201be81            foreign exchange cashier</span>
+<span class="co">#&gt; 15:  3 2b871272-bd61-4206-bd1a-0b96d7023098                             cashier</span></pre></div>
 </div>
 </div>
   </div>

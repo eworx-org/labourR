@@ -21,14 +21,20 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/AleKoure/labourR/branch/master/graph/badge.svg)](https://codecov.io/gh/AleKoure/labourR?branch=master)
 <!-- badges: end -->
 
-The goal of the labourR package is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to existing hierarchical ontologies like [ESCO](https://ec.europa.eu/esco/portal), the multilingual classification of European Skills, Competences, Qualifications and Occupations, and [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_), the International Standard Classification of Occupations, and showcase the importance of those classifications in understanding and analysing the labour market.
+The goal of labourR is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to hierarchical ontologies like [ESCO](https://ec.europa.eu/esco/portal), the multilingual classification of European Skills, Competences, Qualifications and Occupations, and [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_), the International Standard Classification of Occupations. Computations are vectorised and the `data.table` package is used for high performance and memory efficiency. 
 
 ## Installation
 
-You can install the released version of labourR from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of labourR from [CRAN](https://CRAN.R-project.org) with,
 
 ``` r
 install.packages("labourR")
+```
+
+Installation requires the Protocol Buffers library. On Debian or Ubuntu install with,
+
+```
+sudo apt-get install -y libprotobuf-dev protobuf-compiler
 ```
 
 ## Examples
@@ -41,20 +47,15 @@ corpus <- data.frame(
 )
 ```
 
-- If the ISCO level is not specified, the top num_leaves, in this case 5, suggested ESCO occupations are returned for each id:
-```{r without_isco_level}
-classify_occupation(corpus = corpus, isco_level = NULL, lang = "en", num_leaves = 5)
-```
+- If the ISCO level is specified, the top suggested ISCO group is returned. `num_leaves` specifies the number of ESCO occupations used for the k-NN classifier to perform a plurality vote,
 
-- Otherwise, if the ISCO level is specified, the top one suggested ISCO group is returned for each id:
 ```{r with_isco_level}
 classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5)
 ```
 
 
-## Contributors
+- If the ISCO level is not specified, the top num_leaves, in this case 5, suggested ESCO occupations are returned for each id,
 
-- Alexandros Kouretsis - [Github](https://github.com/AleKoure)
-- Andreas Bampouris - [Github](https://github.com/andbamp)
-- Petros Morfiris - [Github](https://github.com/peterthunder)
-- Konstantinos Papageorgiou
+```{r without_isco_level}
+classify_occupation(corpus = corpus, isco_level = NULL, lang = "en", num_leaves = 5)
+```

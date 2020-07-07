@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>occupations_retrieval • labourR</title>
+<title>Occupations Classification • labourR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="occupations_retrieval">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Occupations Classification">
 <meta property="og:description" content="labourR">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -54,10 +54,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/codebook.html">Codebook</a>
-    </li>
-    <li>
-      <a href="../articles/occupations_retrieval.html">occupations_retrieval</a>
+      <a href="../articles/occupations_retrieval.html">Occupations Classification</a>
     </li>
   </ul>
 </li>
@@ -82,7 +79,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>occupations_retrieval</h1>
+      <h1 data-toc-skip>Occupations Classification</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/AleKoure/labourR/blob/master/vignettes/occupations_retrieval.Rmd"><code>vignettes/occupations_retrieval.Rmd</code></a></small>
@@ -92,12 +89,68 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">labourR</span>)</pre></body></html></div>
+<p>This vignette will go into the details of the ESCO/ISCO hierarchical relationship and explain how the labourR package takes advantage of that relationship to suggest occupations for multilingual free-text vacancy data.</p>
+<div id="esco---isco-relationship" class="section level2">
+<h2 class="hasAnchor">
+<a href="#esco---isco-relationship" class="anchor"></a>ESCO - ISCO relationship</h2>
+<p>ESCO is the <a href="https://ec.europa.eu/esco/portal/escopedia/ESCO_languages">multilingual</a> classification of European <a href="https://ec.europa.eu/esco/portal/escopedia/Skill">Skills</a>, <a href="https://ec.europa.eu/esco/portal/escopedia/Competence">Competences</a>, <a href="https://ec.europa.eu/esco/portal/escopedia/Qualification">Qualifications</a> and <a href="https://ec.europa.eu/esco/portal/escopedia/Occupation">Occupations</a>. ESCO works as a dictionary, describing, identifying and classifying professional occupations, skills, and qualifications relevant for the EU labour market and education and training. Those concepts and the relationships between them can be understood by electronic systems, which allows different online platforms to use ESCO for services like matching jobseekers to jobs on the basis of their skills, suggesting training to people who want to reskill or upskill etc.</p>
+<p><a href="https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_">ISCO</a>, on the other hand, the International Standard Classification of Occupations, is a four-level classification of occupation groups managed by the International Labour Organisation (ILO). Its structure follows a grouping by education level. The two latest versions of ISCO are ISCO-88 (dating from 1988) and ISCO-08 (dating from 2008).</p>
+<p>In ESCO, each occupation is mapped to exactly one ISCO-08 code. ISCO-08 can therefore be used as a hierarchical structure for the occupations pillar. ISCO-08 provides the top four levels for the occupations pillar. ESCO occupations are located at level 5 and lower.</p>
+<p><img src="../man/figures/ESCO_ISCO_hierarchy.svg" width="650"></p>
+<p>To find more about ESCO and its relationship with ISCO, visit <a href="https://ec.europa.eu/esco/portal/escopedia/Main_Page">ESCOpedia</a>, the online reference to the ESCO classification.</p>
+</div>
+<div id="an-introduction-to-the-labourr-package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#an-introduction-to-the-labourr-package" class="anchor"></a>An introduction to the labourR package</h2>
+<p>The goal of labourR is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to existing hierarchical ontologies of ESCO and ISCO classification and showcase their importance in understanding and analyzing labour market. Computations are vectorized and the <code>data.table</code> package is used for high performance and memory efficiency.</p>
+<p>In the following we will explain how the classifier maps free-text vacancy data into the ESCO-ISCO official ontologies and takes advantage of their hierarchy.</p>
+<p>The occupations classifier takes as input the following,</p>
+<ul>
+<li><p>A corpus in tabular form containing the id and the text variables.</p></li>
+<li><p>Names of the id and the text variable.</p></li>
+<li><p>Corpus language.</p></li>
+<li><p>Number of ESCO ontologies that are used for k-NN.</p></li>
+<li><p>ISCO level for the suggested occupations. If it is 1-4, then the suggested ISCO Group is returned. If NULL the top ESCO occupations are returned.</p></li>
+</ul>
+<p>First, the input text is cleansed and tokenized. The tokens are then matched with the ESCO occupations vocabulary, created from the  of the occupations. They are joined with the  weighted tokens of the ESCO occupations and the sum of the tf-idf score is used to retrieve the suggested ontologies. Precisely, the suggested ESCO occupations are retrieved by solving the optimization problem,</p>
+<p><span class="math display">\[\arg \max_d \left\{ \vec{u}_{binary} \cdot \vec{u}_d \right\}\]</span></p>
+<p>where, <span class="math inline">\(\vec{u}_{binary}\)</span> stands for the binary representation of a query to the ESCO-vocabulary space, while, <span class="math inline">\(\vec{u}_d\)</span> is the ESCO occupation normalized vector generated by the tf-idf numerical statistic. If an ISCO level is specified, the K-NN algorithm is used to determine the suggested occupation, classified by a plurality vote in the corresponding hierarchical level of its neighbors.</p>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">labourR</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">data.table</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">magrittr</span>)
+
+<span class="no">corpus</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/data.table.html">data.table</a></span>(
+  <span class="kw">id</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">3</span>,
+  <span class="kw">text</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(
+    <span class="st">"Insegnante di scuola primaria"</span>,
+    <span class="st">"Sales and marketing assistant manager"</span>,
+    <span class="st">"Data Scientist"</span>
+  )
+)</pre></body></html></div>
+<p>One functionality the package provides is language identification, through the cld2 and cld3 packages.</p>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">corpus</span>[, <span class="no">language</span> <span class="kw">:=</span> <span class="fu"><a href="../reference/identify_language.html">identify_language</a></span>(<span class="no">text</span>)]</pre></body></html></div>
+<p>For <code>num_leaves</code> equal to 10 (ESCO occupations) and <code>isco_level</code> equal to 3, the suggested occupation is returned for each identified language respectively,</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">languages</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/duplicated.html">unique</a></span>(<span class="no">corpus</span>$<span class="no">language</span>)
+<span class="no">suggestions</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">languages</span>, <span class="kw">function</span>(<span class="no">lang</span>) {
+  <span class="fu"><a href="../reference/classify_occupation.html">classify_occupation</a></span>(
+    <span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>[<span class="no">language</span> <span class="kw">==</span> <span class="no">lang</span>],
+    <span class="kw">lang</span> <span class="kw">=</span> <span class="no">lang</span>,
+    <span class="kw">isco_level</span> <span class="kw">=</span> <span class="fl">3</span>,
+    <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">10</span>
+  )
+}) <span class="kw">%&gt;%</span> <span class="no">rbindlist</span></pre></body></html></div>
+<pre><code>#&gt;    id iscoGroup                                      preferredLabel
+#&gt; 1:  1       234         Primary school and early childhood teachers
+#&gt; 2:  2       243 Sales, marketing and public relations professionals
+#&gt; 3:  3       251   Software and applications developers and analysts</code></pre>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

@@ -2,7 +2,6 @@ pandoc: 2.7.3
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
-  codebook: codebook.html
   occupations_retrieval: occupations_retrieval.html
-last_built: 2020-07-07T12:08Z
+last_built: 2020-07-07T17:37Z
 
