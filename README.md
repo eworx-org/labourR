@@ -19,9 +19,12 @@ like [ESCO](https://ec.europa.eu/esco/portal), the multilingual
 classification of European Skills, Competences, Qualifications and
 Occupations, and
 [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_),
-the International Standard Classification of Occupations. Computations
-are vectorised and the `data.table` package is used for high performance
-and memory efficiency.
+the International Standard Classification of Occupations.
+
+<img src="man/figures/ESCO_ISCO_hierarchy.svg" width="650"/>
+
+Computations are vectorised and the `data.table` package is used for
+high performance and memory efficiency.
 
 ## Installation
 
