@@ -1,8 +1,8 @@
 Package: labourR
 Type: Package
-Title: labourR: Methods, Classes and Data for Labour Market Analysis
+Title: labourR: Classify multilingual labour market free-text to ESCO hierarchical ontologies.
 Version: 0.1.0
-Author: Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou
+Author: Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou, Eworx S.A.
 Maintainer: Alexandros Kouretsis <ako@eworx.gr>
 Description: Statistically analysys and processing of data related
     to skills, competences, qualifications and occupations provide
@@ -10,10 +10,8 @@ Description: Statistically analysys and processing of data related
     training providers, employment services, guidance practitioners, 
     researchers and citizens.  We introduce a suite of methods and 
     data sets to address these problems. The package allows researchers to 
-    map free text to a broad range of ontologies. There are also 
-    functionalities for text mining, visualisations and data wrangling.
-    Together with the included data sets, labourR aims to provide a 
-    user-friendly tool for exploring labour market data.
+    map free text to a broad range of ontologies providing a user-friendly 
+    tool for exploring labour market data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

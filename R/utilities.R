@@ -1,9 +1,9 @@
 #' Get language code from file name
 #'
-#' Occupations' labels and structure are exposed throught the ESCO web portal. This function retrieves languages
+#' Occupations' labels and structure are exposed at the ESCO web portal. This function retrieves languages
 #' from the downloadable CSVs, see \href{https://ec.europa.eu/esco/portal/escopedia/ESCO_languages}{escopedia}.
 #'
-#' @param string Filepath with a language code as given by esco downloadable .CSVs.
+#' @param string Filepath with a language code as given by ESCO downloadable .CSVs.
 #'
 #' @return A character vector with two-letter language codes.
 #' @export
@@ -20,7 +20,7 @@ get_language_code <- function(string){
 #' Retrieve stopwords
 #'
 #' The functions retrieves stopwords from the \code{\link{stopwords}} package using the ISO-639-1 encoding.
-#' For miscellaneius languages \code{\link{data_stopwords_misc}} are used.
+#' For miscellaneous languages \code{\link{data_stopwords_misc}} are used.
 #'
 #' @param code A string with the language code of the stopwords.
 #'

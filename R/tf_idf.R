@@ -69,4 +69,5 @@ tf_idf <- function(
     res[, tfIdf := tfIdf / sum(tfIdf), by = "class"]
 
   res
+
 }
