@@ -17,7 +17,7 @@
 #'
 #' @details
 #' First, the input text is cleansed and tokenized. The tokens are then matched with the ESCO occupations vocabulary, created from
-#' the \code{\link[=occupations_bundle]{preferred and alternative labels}} of the occupations. They are joined with the \code{\link[=tf_idf]{tfidf}}
+#' the preferred and alternative labels of the occupations. They are joined with the \code{\link[=tf_idf]{tfidf}}
 #' weighted tokens of the ESCO occupations and the sum of the tf-idf score is used to retrieve the suggested ontologies. Technically speaking, the
 #' suggested ESCO occupations are retrieved by solving the optimization problem, \deqn{\arg\max_d\left\{\vec{u}_{binary}\cdot \vec{u}_d\right\}}
 #' where, \eqn{\vec{u}_{binary}} stands for the binary representation of a query to the ESCO-vocabulary space,

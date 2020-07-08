@@ -70,7 +70,7 @@ classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5
 \references{
 M.P.J. van der Loo (2014). \href{https://journal.r-project.org/archive/2014-1/loo.pdf}{The stringdist package for approximate string matching}. R Journal 6(1) pp 111-122.
 
-Turrell, A., et al. (2018).
+Turrell et al., (2018).
 \href{https://www.bankofengland.co.uk/working-paper/2018/using-job-vacancies-to-understand-the-effects-of-labour-market-mismatch-on-uk-output}{
 Using job vacancies to understand the effects of labour market mismatch on UK output and productivity}, Staff Working Paper 737, Bank of England.
 
