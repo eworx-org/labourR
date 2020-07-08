@@ -200,7 +200,7 @@ or a data.table with the id, the preferred label and the suggested ISCO group of
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>First, the input text is cleansed and tokenized. The tokens are then matched with the ESCO occupations vocabulary, created from
-the <code><a href='occupations_bundle.html'>preferred and alternative labels</a></code> of the occupations. They are joined with the <code><a href='tf_idf.html'>tfidf</a></code>
+the preferred and alternative labels of the occupations. They are joined with the <code><a href='tf_idf.html'>tfidf</a></code>
 weighted tokens of the ESCO occupations and the sum of the tf-idf score is used to retrieve the suggested ontologies. Technically speaking, the
 suggested ESCO occupations are retrieved by solving the optimization problem, $$\arg\max_d\left\{\vec{u}_{binary}\cdot \vec{u}_d\right\}$$
 where, \(\vec{u}_{binary}\) stands for the binary representation of a query to the ESCO-vocabulary space,
@@ -242,7 +242,7 @@ Using job vacancies to understand the effects of labour market mismatch on UK ou
 
       <footer>
       <div class="copyright">
-  <p>Developed by Alexandros Kouretsis, Andreas Babouris, Petros Morfiris, Konstantinos Papageorgiou.</p>
+  <p>Developed by Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou.</p>
 </div>
 
 <div class="pkgdown">

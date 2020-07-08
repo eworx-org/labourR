@@ -21,7 +21,11 @@ Occupations, and
 [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_),
 the International Standard Classification of Occupations.
 
-<img src="man/figures/ESCO_ISCO_hierarchy.svg" width="650"/>
+<center>
+
+<img src="man/figures/ESCO_ISCO_hierarchy.png" width="650"/>
+
+</center>
 
 Computations are vectorised and the `data.table` package is used for
 high performance and memory efficiency.
