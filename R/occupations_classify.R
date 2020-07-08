@@ -30,12 +30,13 @@
 #'
 #' @return Either a data.table with the id, the preferred label and the suggested ESCO occupation URIs (num_leaves predictions for each id),
 #' or a data.table with the id, the preferred label and the suggested ISCO group of the inputted level (one for each id).
+#'
 #' @export
 #'
 #' @references
 #' M.P.J. van der Loo (2014). \href{https://journal.r-project.org/archive/2014-1/loo.pdf}{The stringdist package for approximate string matching}. R Journal 6(1) pp 111-122.
 #'
-#' Turrell, A., Speigner, B., Djumalieva, J., Copple, D., and Thurgood, J. (2018).
+#' Turrell et al., (2018).
 #' \href{https://www.bankofengland.co.uk/working-paper/2018/using-job-vacancies-to-understand-the-effects-of-labour-market-mismatch-on-uk-output}{
 #' Using job vacancies to understand the effects of labour market mismatch on UK output and productivity}, Staff Working Paper 737, Bank of England.
 #'
@@ -72,7 +73,7 @@ classify_occupation <- function(corpus, id_col = "id", text_col = "text", lang =
     stop(paste0("Corpus must contain the specified variables: ", id_col, " and ", text_col, "."))
 
   # Prepare corpus.
-  corpus <- as.data.table(corpus)
+  corpus <- data.table(corpus)
   setnames(corpus, c(id_col, text_col), c("id", "text"))
 
   # Prepare the weighted tokens and the vocabulary.
@@ -86,7 +87,7 @@ classify_occupation <- function(corpus, id_col = "id", text_col = "text", lang =
   freeTextTokensList <- lapply(strsplit(corpus$text, split = " "), function(x) x[!x %in% get_stopwords(lang)])
   names(freeTextTokensList) <- corpus$id
 
-  freeTextTokensDT <- lapply(freeTextTokensList, as.data.table) %>%
+  freeTextTokensDT <- lapply(freeTextTokensList, data.table) %>%
     rbindlist(idcol = TRUE) %>%
     setnames(c("id", "term"))
 

@@ -73,7 +73,7 @@ corpus <- data.table(
 )
 ```
 
-One functionality the package provides is language identification using the [cld2](https://cran.r-project.org/web/packages/cld2/index.html) package, that is based on a Naive Bayes classifier.
+One functionality the package provides is language identification using the cld2 package, that is based on a Naive Bayes classifier.
 
 ```{r italian_language_identification}
 corpus[, language := identify_language(text)]

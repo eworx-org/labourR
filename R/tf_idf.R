@@ -45,11 +45,11 @@ tf_idf <- function(
   # due to NSE notes in R CMD check
   NULL -> term -> tf -> term_count -> idf -> docFreq -> tfIdf
 
-  corpus <- as.data.table(corpus)
+  corpus <- data.table(corpus)
   tokensList <- strsplit(corpus[, get(text_col)], " ")
   names(tokensList) <- corpus[, get(id_col)]
 
-  tokensDT <- lapply(tokensList, as.data.table) %>%
+  tokensDT <- lapply(tokensList, data.table) %>%
     rbindlist(idcol = TRUE) %>%
     setnames(c("class", "term"))
 
