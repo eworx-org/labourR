@@ -1,15 +1,17 @@
 destination: docs
-developers:
-  Andreas Babouris:
-    href: https://www.eworx.gr/
-  Alexandros Kouretsis:
-    href: https://scholar.google.gr/citations?user=9UTGbIAAAAAJ&hl=en
 
-  Petros Morfiris:
-
-  Konstantinos Papageorgiou:
-
-  Eworx S.A.:
-    href: https://www.rstudio.com
-    html: <img src="https://www.tidyverse.org/rstudio-logo.svg" height="24" >
-
+reference:
+- title: "All Functions"
+  desc: "Functions for free-text analysis."
+- contents:
+  - classify_occupation
+  - cleansing_corpus
+  - get_language_code
+  - get_stopwords
+  - identify_language
+  - tf_idf
+- title: "Data Sets"
+  desc: "Data with standardized occupations."
+- contents:
+  - isco_occupations_bundle
+  - occupations_bundle

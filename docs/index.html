@@ -18,7 +18,7 @@
     training providers, employment services, guidance practitioners, 
     researchers and citizens.  We introduce a suite of methods and 
     data sets to address these problems. The package allows researchers to 
-    map free text to a broad range of standardized classifications providing 
+    map free text to a broad range of standardized classifications, providing 
     a user-friendly tool for exploring labour market data.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -65,6 +65,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -91,20 +94,19 @@
 <!-- badges: start -->
 
 <p>The goal of labourR is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to hierarchical ontologies like <a href="https://ec.europa.eu/esco/portal">ESCO</a>, the multilingual classification of European Skills, Competences, Qualifications and Occupations, and <a href="https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_">ISCO</a>, the International Standard Classification of Occupations.</p>
-<p><img src="reference/figures/ESCO_ISCO_hierarchy.png" width="650"></p>
+<p><img src="reference/figures/ESCO_ISCO_hierarchy.svg" width="650"></p>
 <p>Computations are vectorised and the <code>data.table</code> package is used for high performance and memory efficiency.</p>
+<p>See <a href="https://alekoure.github.io/labourR/articles/occupations_retrieval.html">Articles</a> section for details.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of labourR from <a href="https://CRAN.R-project.org">CRAN</a> with,</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"labourR"</span>)</pre></div>
-<p>Installation requires the Protocol Buffers library. On Debian or Ubuntu install with,</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>sudo apt<span class="op">-</span>get install <span class="op">-</span>y libprotobuf<span class="op">-</span>dev protobuf<span class="op">-</span>compiler</span></code></pre></div>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">labourR</span>)
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">labourR</span>)
 <span class="no">corpus</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
   <span class="kw">id</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">3</span>,
   <span class="kw">text</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Data Scientist"</span>, <span class="st">"Junior Architect Engineer"</span>, <span class="st">"Cashier at McDonald's"</span>)
@@ -112,7 +114,7 @@
 <ul>
 <li>If the ISCO level is specified, the top suggested ISCO group is returned. <code>num_leaves</code> specifies the number of ESCO occupations used for the k-NN classifier to perform a plurality vote,</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
+<!-- end list --><div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
 <span class="co">#&gt;    id iscoGroup                                          preferredLabel</span>
 <span class="co">#&gt; 1:  1       251       Software and applications developers and analysts</span>
 <span class="co">#&gt; 2:  2       214 Engineering professionals (excluding electrotechnology)</span>
@@ -120,7 +122,7 @@
 <ul>
 <li>If the ISCO level is not specified, the top num_leaves, in this case 5, suggested ESCO occupations are returned for each id,</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
+<!-- end list --><div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/classify_occupation.html">classify_occupation</a></span>(<span class="kw">corpus</span> <span class="kw">=</span> <span class="no">corpus</span>, <span class="kw">isco_level</span> <span class="kw">=</span> <span class="kw">NULL</span>, <span class="kw">lang</span> <span class="kw">=</span> <span class="st">"en"</span>, <span class="kw">num_leaves</span> <span class="kw">=</span> <span class="fl">5</span>)
 <span class="co">#&gt;     id                           conceptUri                      preferredLabel</span>
 <span class="co">#&gt;  1:  1 258e46f9-0075-4a2e-adae-1ff0477e0f30                      data scientist</span>
 <span class="co">#&gt;  2:  1 1562c7a3-c7d9-419d-b9b6-db26610bcf84             data warehouse designer</span>
@@ -160,8 +162,8 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Andreas Babouris <br><small class="roles"> Author </small>  </li>
 <li>Alexandros Kouretsis <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Andreas Babouris <br><small class="roles"> Author </small>  </li>
 <li>Petros Morfiris <br><small class="roles"> Author </small>  </li>
 <li>Konstantinos Papageorgiou <br><small class="roles"> Author </small>  </li>
 <li><a href="authors.html">All authors...</a></li>
@@ -181,7 +183,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou.</p>
+  <p>Developed by Alexandros Kouretsis, Andreas Babouris, Petros Morfiris, Konstantinos Papageorgiou.</p>
 </div>
 
 <div class="pkgdown">

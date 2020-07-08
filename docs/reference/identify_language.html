@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Detect Language — identify_language" />
-<meta property="og:description" content="This function performs language detection by combining Compact Language Detector 2 and 3 from CRAN libraries cld2 and cld3.
+<meta property="og:description" content="This function performs language detection by using Compact Language Detector 2 from CRAN library cld2.
 It is vectorised and guesses the language of each string. Note that it is not designed to do well on very short text,
 lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is an order of magnitude faster than CLD3." />
 
@@ -101,6 +101,9 @@ lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is a
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -128,27 +131,21 @@ lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is a
     </div>
 
     <div class="ref-description">
-    <p>This function performs language detection by combining Compact Language Detector 2 and 3 from CRAN libraries <code>cld2</code> and <code>cld3</code>.
+    <p>This function performs language detection by using Compact Language Detector 2 from CRAN library <code>cld2</code>.
 It is vectorised and guesses the language of each string. Note that it is not designed to do well on very short text,
 lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is an order of magnitude faster than CLD3.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>identify_language</span>(<span class='no'>text</span>, <span class='kw'>alg</span> <span class='kw'>=</span> <span class='st'>"cld2"</span>)</pre>
+    <pre class="usage"><span class='fu'>identify_language</span>(<span class='no'>text</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>text</th>
-      <td><p>A string with text to classify or a connection to read from.</p></td>
-    </tr>
-    <tr>
-      <th>alg</th>
-      <td><p>Specification of algorithm to be used:</p>
+      <td><p>A string with text to classify or a connection to read from.</p>
 <ul>
 <li><p>cld2: Probabilistically (Naïve Bayesian classifier) detects over 80 languages in plain text.</p></li>
-<li><p>cld3: Neural network model for language identification.</p></li>
-<li><p>both: Combination of cld2 and cld3. A result is returned only when the two algorithms agree.</p></li>
 </ul></td>
     </tr>
     </table>
@@ -172,7 +169,7 @@ lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is a
 
       <footer>
       <div class="copyright">
-  <p>Developed by Andreas Babouris, Alexandros Kouretsis, Petros Morfiris, Konstantinos Papageorgiou.</p>
+  <p>Developed by Alexandros Kouretsis, Andreas Babouris, Petros Morfiris, Konstantinos Papageorgiou.</p>
 </div>
 
 <div class="pkgdown">
