@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# labourR <img src='man/figures/logo.png' align="right" height="100"/>
+# labourR <img src='man/figures/logo.png' align="right" height="130"/>
 
 <!-- badges: start -->
 

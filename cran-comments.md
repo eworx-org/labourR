@@ -17,3 +17,8 @@ New submission
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+
+## Alert: isolate r-hub error
+Error for lack of system dependencies on r-hub only for
+
+Ubuntu Linux 16.04 LTS, R 3.6.1, GCC
