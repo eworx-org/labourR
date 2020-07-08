@@ -26,6 +26,10 @@ the International Standard Classification of Occupations.
 Computations are vectorised and the `data.table` package is used for
 high performance and memory efficiency.
 
+See
+[Articles](https://alekoure.github.io/labourR/articles/occupations_retrieval.html)
+section for details.
+
 ## Installation
 
 You can install the released version of labourR from
