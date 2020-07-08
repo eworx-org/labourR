@@ -28,10 +28,9 @@ Suggests:
     knitr,
     testthat
 VignetteBuilder: knitr
-Depends:     
-    R (>= 2.10),
-    data.table
-Imports: 
+Depends: R (>= 2.10)
+Imports:
+    data.table,
     cld2,
     magrittr,
     stopwords,
