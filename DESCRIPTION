@@ -1,6 +1,6 @@
 Package: labourR
 Type: Package
-Title: labourR: Classify multilingual labour market free-text to ESCO hierarchical ontologies
+Title: Classify Multilingual Labour Market Free-Text to Standardized Hierarchical Occupations
 Version: 0.1.0
 Authors@R: c(person("Andreas", "Babouris", email = "aba@eworx.gr", role = "aut"),
              person("Eworx S.A", role = "cph"),
@@ -10,15 +10,14 @@ Authors@R: c(person("Andreas", "Babouris", email = "aba@eworx.gr", role = "aut")
              person("Stavros", "Ladas", email = "sl@eworx.gr", role = "ctb"),
              person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb")
             )
-Maintainer: Alexandros Kouretsis <ako@eworx.gr>
-Description: Statistically analysys and processing of data related
+Description: Statistical analysis and processing of data related
     to skills, competences, qualifications and occupations provide
     useful insight to policy-makers, education and 
     training providers, employment services, guidance practitioners, 
     researchers and citizens.  We introduce a suite of methods and 
     data sets to address these problems. The package allows researchers to 
-    map free text to a broad range of ontologies providing a user-friendly 
-    tool for exploring labour market data.
+    map free text to a broad range of standardized classifications providing 
+    a user-friendly tool for exploring labour market data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -34,7 +33,6 @@ VignetteBuilder: knitr
 Depends: R (>= 2.10)
 Imports: 
     cld2,
-    cld3,
     data.table,
     magrittr,
     stopwords,

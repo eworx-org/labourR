@@ -9,11 +9,6 @@ os:
   - linux
   - osx
 
-addons:
-  apt:
-    packages:
-      - libprotobuf-dev protobuf-compiler
-
 r:
   - oldrel
   - release

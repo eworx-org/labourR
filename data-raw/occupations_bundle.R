@@ -12,4 +12,10 @@ occupations_bundle <- fread(
 
 occupations_bundle[, conceptUri := gsub(".*/", "", conceptUri)]
 
+
+for(col in names(occupations_bundle)){
+  set(occupations_bundle, j = col, value = iconv(occupations_bundle[[col]], from="UTF-8", to="ASCII" ))
+}
+
 usethis::use_data(occupations_bundle, overwrite = TRUE, compress = "xz")
+

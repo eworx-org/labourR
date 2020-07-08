@@ -12,4 +12,10 @@ isco_occupations_bundle <- fread(
   ) %>%
   setnames("code", "iscoGroup")
 
+for(col in names(isco_occupations_bundle)){
+  set(isco_occupations_bundle, j = col, value = iconv(isco_occupations_bundle[[col]], from="UTF-8", to="ASCII" ))
+}
+
+isco_occupations_bundle[, iscoGroup := iconv(iscoGroup, from="UTF-8", to="ASCII")]
 usethis::use_data(isco_occupations_bundle, overwrite = TRUE, compress = "xz")
+

@@ -4,24 +4,20 @@
 \alias{identify_language}
 \title{Detect Language}
 \usage{
-identify_language(text, alg = "cld2")
+identify_language(text)
 }
 \arguments{
-\item{text}{A string with text to classify or a connection to read from.}
-
-\item{alg}{Specification of algorithm to be used:
+\item{text}{A string with text to classify or a connection to read from.
 
 \itemize{
   \item cld2: Probabilistically (Naïve Bayesian classifier) detects over 80 languages in plain text.
-  \item cld3: Neural network model for language identification.
-  \item both: Combination of cld2 and cld3. A result is returned only when the two algorithms agree.
 }}
 }
 \value{
 A character vector with ISO-639-1 two-letter language codes.
 }
 \description{
-This function performs language detection by combining Compact Language Detector 2 and 3 from CRAN libraries \code{\link{cld2}} and \code{\link{cld3}}.
+This function performs language detection by using Compact Language Detector 2 from CRAN library \code{\link{cld2}}.
 It is vectorised and guesses the language of each string. Note that it is not designed to do well on very short text,
 lists of proper names, part numbers, etc. CLD2 has the highest F1 score and is an order of magnitude faster than CLD3.
 }

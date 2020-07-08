@@ -32,4 +32,11 @@ tfidf_tokens %<>%
   rbindlist(idcol = TRUE) %>%
   setnames(".id", "language")
 
-usethis::use_data(tfidf_tokens, internal = TRUE, overwrite = TRUE)
+tfidf_tokens[, tfIdf := round(tfIdf, 4)]
+
+names_factors <- c("language" ,"class")
+
+for(col in names_factors)
+  set(tfidf_tokens, j = col, value = as.factor(tfidf_tokens[[col]]))
+
+usethis::use_data(tfidf_tokens, compress = "xz",internal = TRUE, overwrite = TRUE)
