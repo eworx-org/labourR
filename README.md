@@ -21,7 +21,7 @@ Occupations, and
 [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_),
 the International Standard Classification of Occupations.
 
-<img src="man/figures/ESCO_ISCO_hierarchy.png" width="650"/>
+<img src="man/figures/ESCO_ISCO_hierarchy.svg" width="650"/>
 
 Computations are vectorised and the `data.table` package is used for
 high performance and memory efficiency.
@@ -34,11 +34,6 @@ You can install the released version of labourR from
 ``` r
 install.packages("labourR")
 ```
-
-Installation requires the Protocol Buffers library. On Debian or Ubuntu
-install with,
-
-    sudo apt-get install -y libprotobuf-dev protobuf-compiler
 
 ## Examples
 
