@@ -16,7 +16,7 @@ cleansing_corpus(
 \arguments{
 \item{text}{Character vector of free text to be cleansed.}
 
-\item{escape_chars}{If TRUE, removes escape characters for `slash n`, `slash r` and `slash t`.}
+\item{escape_chars}{If TRUE, removes escape characters for \verb{slash n}, \verb{slash r} and \verb{slash t}.}
 
 \item{nonalphanum}{If TRUE, removes non-alphanumeric characters.}
 

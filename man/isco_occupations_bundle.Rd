@@ -19,9 +19,10 @@ isco_occupations_bundle
 }
 \description{
 The International Standard Classification of Occupations (ISCO) is a four-level classification of occupation groups managed
- by the International Labour Organisation (ILO). Its structure follows a grouping by education level. The two latest versions of ISCO are
- ISCO-88 (dating from 1988) and ISCO-08 (dating from 2008).
-
-* The ESCO version used is ESCO v1 1.0.3 retrieved at 11/12/2019.
+by the International Labour Organisation (ILO). Its structure follows a grouping by education level. The two latest versions of ISCO are
+ISCO-88 (dating from 1988) and ISCO-08 (dating from 2008).
+\itemize{
+\item The ESCO version used is ESCO v1 1.0.3 retrieved at 11/12/2019.
+}
 }
 \keyword{datasets}

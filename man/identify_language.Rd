@@ -10,7 +10,7 @@ identify_language(text)
 \item{text}{A string with text to classify or a connection to read from.
 
 \itemize{
-  \item cld2: Probabilistically (Naïve Bayesian classifier) detects over 80 languages in plain text.
+\item cld2: Probabilistically (Naïve Bayesian classifier) detects over 80 languages in plain text.
 }}
 }
 \value{

@@ -24,16 +24,16 @@ tf_idf(
 
 \item{text_col}{Input data column name with the documents.}
 
-\item{tf_weight}{Weighting scheme of term frequency. Choices are `raw_count`, `double_norm` or `log_norm` for raw count, double normalization at 0.5 and log normalization respectively.}
+\item{tf_weight}{Weighting scheme of term frequency. Choices are \code{raw_count}, \code{double_norm} or \code{log_norm} for raw count, double normalization at 0.5 and log normalization respectively.}
 
-\item{idf_weight}{Weighting scheme of inverse document frequency. Choices are `idf` and `idf_smooth` for inverse document frequency and inverse document frequency smooth respectively.}
+\item{idf_weight}{Weighting scheme of inverse document frequency. Choices are \code{idf} and \code{idf_smooth} for inverse document frequency and inverse document frequency smooth respectively.}
 
-\item{min_chars}{Words with less characters than `min_chars` are filtered out before calculating numerical statistics.}
+\item{min_chars}{Words with less characters than \code{min_chars} are filtered out before calculating numerical statistics.}
 
 \item{norm}{Boolean value for document normalization.}
 }
 \value{
-A data.table with three columns, namely `class` derived from given document ids, `term` and `tfIdf`.
+A data.table with three columns, namely \code{class} derived from given document ids, \code{term} and \code{tfIdf}.
 }
 \description{
 Measure weighted amount of information concerning the specificity of terms in a corpus.
