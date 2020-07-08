@@ -1,4 +1,11 @@
+## Resubmission
+
+This is a resubmission to resolve `Error: Vignette re-building failed`. In this version I have:
+
+* Added rmarkdown package in the Suggests section of Description.
+
 ## Test environments
+
 * Ubuntu 18.04.4 LTS (local), R 3.4.4
 * Ubuntu 16.04.6 LTS (on travis-ci), R 3.6.1, 3.6.3, 4.0.0, R-devel
 * macOS High Sierra 10.13.6 (on travis-ci), R 3.6.1, 3.6.3, 4.0.2
