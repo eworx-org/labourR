@@ -1,0 +1,53 @@
+---
+title: "Introduction to labourR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{labourR_blogpost}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+To assist research on the labour market, [ESCO](https://ec.europa.eu/esco/portal/home) has defined a taxonomy for occupations. Occupations are specified and organized in a hierarchical structure based on the International Standard Classification of Occupations (ISCO). `labourR` is a new package that performs occupations coding for multilingual free-form text (e.g. a job title) using the ESCO hierarchical classification model.
+
+The initial motivation was to retrieve the work experience history from a Curriculum Vitae for the purpose of statistical analysis of data from the Europass online CV editor. In the approach followed, the first step is to generate the term frequency–inverse document frequency numerical statistic for each term found in the ESCO occupations corpus. Then, the input query receives a score for each ESCO occupation based on the matched terms found on the ESCO vocabulary. Given an ISCO level, the classification is performed by a plurality vote in the corresponding hierarchical level of the ESCO ontologies with the highest score. 
+
+The `labourR` package:
+
+- Includes the ESCO corpus and the respective ESCO to ISCO mappings.
+
+- Allows a user to enter multilingual free-form text and receive its classification in the ESCO-ISCO hierarchy.
+
+- Computations are fully vectorized and memory efficient.
+
+- Includes facilities to assist research in text mining of labour market data.
+
+## Installation
+
+You can install the released version of labourR from [CRAN](https://CRAN.R-project.org) with,
+
+``` r
+install.packages("labourR")
+```
+
+## Examples
+
+```{r example}
+library(labourR)
+corpus <- data.frame(
+  id = 1:3,
+  text = c("Data Scientist", "Junior Architect Engineer", "Cashier at McDonald's")
+)
+```
+
+For a given ISCO hierarchical level, the top suggested ISCO group is returned. `num_leaves` specifies the number of ESCO occupations used by the classifier to perform a plurality vote,
+
+```{r with_isco_level}
+classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5)
+```
