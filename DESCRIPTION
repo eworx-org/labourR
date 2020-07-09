@@ -3,15 +3,15 @@ Type: Package
 Title: Classify Multilingual Labour Market Free-Text to Standardized Hierarchical Occupations
 Version: 1.0.0
 Authors@R: c(
-    person("Andreas", "Bampouris", email = "aba@eworx.gr", role = "aut"),
     person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),
-    person("Eworx S.A", role = "cph"),
+    person("Andreas", "Bampouris", email = "aba@eworx.gr", role = "ctr"),
     person("Petros", "Morfiris", email = "pem@eworx.gr", role = "aut"),
     person("Konstantinos", "Papageorgiou", email = "melt@eworx.gr", role = "aut"),
     person("Stavros", "Ladas", email = "sl@eworx.gr", role = "ctb"),
     person("Athanassios", "Siaperas", email = "athanassios.siaperas@cedefop.europa.eu", role = "ctb"),
     person("Philippe", "Tissot", email = "philippe.tissot@cedefop.europa.eu", role = "ctb"),
     person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb")
+    person("Eworx S.A", role = "cph"),
             )
 Description: Statistical analysis and processing of data related to skills, 
     competences, qualifications and occupations provide useful insight to 

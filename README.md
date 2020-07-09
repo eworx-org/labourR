@@ -15,7 +15,7 @@ coverage](https://codecov.io/gh/AleKoure/labourR/branch/master/graph/badge.svg)]
 
 The goal of labourR is to map multilingual free-text of occupations,
 such as a job title in a Curriculum Vitae, to hierarchical ontologies
-like [ESCO](https://ec.europa.eu/esco/portal), the multilingual
+provided by [ESCO](https://ec.europa.eu/esco/portal), the multilingual
 classification of European Skills, Competences, Qualifications and
 Occupations, and
 [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_),
