@@ -17,6 +17,6 @@ The functions retrieves stopwords from the \code{\link{stopwords}} package using
 For miscellaneous languages \code{\link{data_stopwords_misc}} are used.
 }
 \examples{
-get_stopwords("en") \%>\%
-  head(10)
+get_stopwords("en")[1:10]
+
 }

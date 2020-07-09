@@ -21,11 +21,17 @@ Occupations, and
 [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_),
 the International Standard Classification of Occupations.
 
-<center>
+<div class="figure">
 
-<img src="man/figures/ESCO_ISCO_hierarchy.png" width="650"/>
+<img src="man/figures/ESCO_ISCO_hierarchy.png" alt="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model." width="80%" />
 
-</center>
+<p class="caption">
+
+Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model.
+
+</p>
+
+</div>
 
 Computations are vectorised and the `data.table` package is used for
 high performance and memory efficiency.

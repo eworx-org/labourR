@@ -24,9 +24,9 @@ ESCO is the [multilingual](https://ec.europa.eu/esco/portal/escopedia/ESCO_langu
 
 In ESCO, each occupation is mapped to exactly one ISCO-08 code. ISCO-08 can therefore be used as a hierarchical structure for the occupations pillar. ISCO-08 provides the top four levels for the occupations pillar. ESCO occupations are located at level 5 and lower.
 
-<center>
-  <img src="../man/figures/ESCO_ISCO_hierarchy.png" width="650"/>
-</center>
+```{r pressure, echo=FALSE, fig.cap="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model.", out.width = '80%'}
+knitr::include_graphics("../man/figures/ESCO_ISCO_hierarchy.png")
+```
 
 To find more about ESCO and its relationship with ISCO, visit [ESCOpedia](https://ec.europa.eu/esco/portal/escopedia/Main_Page), the online reference to the ESCO classification.
 
