@@ -29,7 +29,8 @@ get_language_code <- function(string){
 #' @importFrom stopwords stopwords stopwords_getlanguages
 #'
 #' @examples
-#' get_stopwords("en")
+#' get_stopwords("en")[1:10]
+#'
 get_stopwords <- function(code){
 
   if (code %in% stopwords_getlanguages("misc"))

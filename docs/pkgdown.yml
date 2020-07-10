@@ -2,6 +2,11 @@ pandoc: 2.7.3
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
+  labourR_blogpost: labourR_blogpost.html
   occupations_retrieval: occupations_retrieval.html
+<<<<<<< HEAD
 last_built: 2020-07-10T16:31Z
+=======
+last_built: 2020-07-09T09:40Z
+>>>>>>> 6a114d5009f14069784c0ee15c4e949792b58345
 

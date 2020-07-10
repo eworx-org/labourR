@@ -4,14 +4,14 @@ Title: Classify Multilingual Labour Market Free-Text to Standardized Hierarchica
 Version: 1.0.0
 Authors@R: c(
     person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),
-    person("Andreas", "Babouris", email = "aba@eworx.gr", role = "aut"),
-    person("Eworx S.A", role = "cph"),
+    person("Andreas", "Bampouris", email = "aba@eworx.gr", role = "aut"),
     person("Petros", "Morfiris", email = "pem@eworx.gr", role = "aut"),
     person("Konstantinos", "Papageorgiou", email = "melt@eworx.gr", role = "aut"),
     person("Stavros", "Ladas", email = "sl@eworx.gr", role = "ctb"),
     person("Athanassios", "Siaperas", email = "athanassios.siaperas@cedefop.europa.eu", role = "ctb"),
     person("Philippe", "Tissot", email = "philippe.tissot@cedefop.europa.eu", role = "ctb"),
-    person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb")
+    person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb"),
+    person("Eworx S.A", role = "cph")
             )
 Description: Statistical analysis and processing of data related to skills, competences, 
     qualifications and occupations provide useful insight to policy-makers, education and training 
@@ -32,6 +32,7 @@ URL: https://github.com/AleKoure/labourR
 BugReports: https://github.com/AleKoure/labourR/issues
 Suggests: 
     knitr,
+    rmarkdown,
     testthat (>= 2.1.0)
 VignetteBuilder: knitr
 Depends: R (>= 3.1.0)

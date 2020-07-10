@@ -61,6 +61,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/labourR_blogpost.html">Introduction to labourR</a>
+    </li>
+    <li>
       <a href="../articles/occupations_retrieval.html">Occupations Classification</a>
     </li>
   </ul>
@@ -106,12 +109,16 @@
 <p>ESCO is the <a href="https://ec.europa.eu/esco/portal/escopedia/ESCO_languages">multilingual</a> classification of European <a href="https://ec.europa.eu/esco/portal/escopedia/Skill">Skills</a>, <a href="https://ec.europa.eu/esco/portal/escopedia/Competence">Competences</a>, <a href="https://ec.europa.eu/esco/portal/escopedia/Qualification">Qualifications</a> and <a href="https://ec.europa.eu/esco/portal/escopedia/Occupation">Occupations</a>. ESCO works as a dictionary, describing, identifying and classifying professional occupations, skills, and qualifications relevant for the EU labour market and education and training. Those concepts and the relationships between them can be understood by electronic systems, which allows different online platforms to use ESCO for services like matching jobseekers to jobs on the basis of their skills, suggesting training to people who want to reskill or upskill etc.</p>
 <p><a href="https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_">ISCO</a>, on the other hand, the International Standard Classification of Occupations, is a four-level classification of occupation groups managed by the International Labour Organisation (ILO). Its structure follows a grouping by education level. The two latest versions of ISCO are ISCO-88 (dating from 1988) and ISCO-08 (dating from 2008).</p>
 <p>In ESCO, each occupation is mapped to exactly one ISCO-08 code. ISCO-08 can therefore be used as a hierarchical structure for the occupations pillar. ISCO-08 provides the top four levels for the occupations pillar. ESCO occupations are located at level 5 and lower.</p>
-<p><img src="../man/figures/ESCO_ISCO_hierarchy.svg" width="650"></p>
+<div class="figure">
+<img src="../man/figures/ESCO_ISCO_hierarchy.png" alt="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model." width="100%"><p class="caption">
+Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model.
+</p>
+</div>
 <p>To find more about ESCO and its relationship with ISCO, visit <a href="https://ec.europa.eu/esco/portal/escopedia/Main_Page">ESCOpedia</a>, the online reference to the ESCO classification.</p>
 </div>
-<div id="an-introduction-to-the-labourr-package" class="section level2">
+<div id="mapping-job-titles" class="section level2">
 <h2 class="hasAnchor">
-<a href="#an-introduction-to-the-labourr-package" class="anchor"></a>An introduction to the labourR package</h2>
+<a href="#mapping-job-titles" class="anchor"></a>Mapping job titles</h2>
 <p>The goal of labourR is to map multilingual free-text of occupations, such as a job title in a Curriculum Vitae, to existing hierarchical ontologies of ESCO and ISCO classification and showcase their importance in understanding and analyzing labour market. Computations are vectorized and the <code>data.table</code> package is used for high performance and memory efficiency.</p>
 <p>In the following we will explain how the classifier maps free-text vacancy data into the ESCO-ISCO official ontologies and takes advantage of their hierarchy.</p>
 <p>The occupations classifier takes as input the following,</p>
@@ -167,7 +174,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Alexandros Kouretsis, Andreas Babouris, Petros Morfiris, Konstantinos Papageorgiou.</p>
+  <p>Developed by Alexandros Kouretsis, Andreas Bampouris, Petros Morfiris, Konstantinos Papageorgiou.</p>
 </div>
 
 <div class="pkgdown">
