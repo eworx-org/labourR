@@ -2,7 +2,7 @@
 title: "Introduction to labourR"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{labourR_blogpost}
+  %\VignetteIndexEntry{Introduction to labourR}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
