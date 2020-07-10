@@ -2,7 +2,7 @@
 title: "Occupations Classification"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{occupations_retrieval}
+  %\VignetteIndexEntry{Occupations Classification}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

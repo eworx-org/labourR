@@ -43,12 +43,12 @@ in the corpus that contain the word. Variations of the tf–idf are often used t
 free-text query.
 }
 \examples{
-\dontrun{
 library(data.table)
-corpus <- occupations_bundle[, text := paste(preferredLabel, altLabels)]
-corpus <- occupations_bundle[, text := cleansing_corpus(text)]
+corpus <- copy(occupations_bundle)
+invisible(corpus[, text := paste(preferredLabel, altLabels)])
+invisible(corpus[, text := cleansing_corpus(text)])
 corpus <- corpus[ , .(conceptUri, text)]
 setnames(corpus, c("id", "text"))
 tf_idf(corpus)
-}
+
 }

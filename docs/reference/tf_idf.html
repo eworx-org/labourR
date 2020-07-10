@@ -201,14 +201,25 @@ free-text query.</p>
     <p>A data.table with three columns, namely <code>class</code> derived from given document ids, <code>term</code> and <code>tfIdf</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>data.table</span>)
-<span class='no'>corpus</span> <span class='kw'>&lt;-</span> <span class='no'>occupations_bundle</span>[, <span class='no'>text</span> <span class='kw'>:=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>preferredLabel</span>, <span class='no'>altLabels</span>)]
-<span class='no'>corpus</span> <span class='kw'>&lt;-</span> <span class='no'>occupations_bundle</span>[, <span class='no'>text</span> <span class='kw'>:=</span> <span class='fu'><a href='cleansing_corpus.html'>cleansing_corpus</a></span>(<span class='no'>text</span>)]
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>data.table</span>)
+<span class='no'>corpus</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/copy.html'>copy</a></span>(<span class='no'>occupations_bundle</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='no'>corpus</span>[, <span class='no'>text</span> <span class='kw'>:=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>preferredLabel</span>, <span class='no'>altLabels</span>)])
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='no'>corpus</span>[, <span class='no'>text</span> <span class='kw'>:=</span> <span class='fu'><a href='cleansing_corpus.html'>cleansing_corpus</a></span>(<span class='no'>text</span>)])
 <span class='no'>corpus</span> <span class='kw'>&lt;-</span> <span class='no'>corpus</span>[ , <span class='fu'>.</span>(<span class='no'>conceptUri</span>, <span class='no'>text</span>)]
 <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/setattr.html'>setnames</a></span>(<span class='no'>corpus</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"id"</span>, <span class='st'>"text"</span>))
-<span class='fu'>tf_idf</span>(<span class='no'>corpus</span>)
-}</div></pre>
+<span class='fu'>tf_idf</span>(<span class='no'>corpus</span>)</div><div class='output co'>#&gt;                                       class            term      tfIdf
+#&gt;     1: 1d8f8111-79dd-41dc-aa2a-12f3192dde3c              2d 0.06854643
+#&gt;     2: 364d9e9f-b14c-4905-b9e5-5de623dba268              2d 0.07274106
+#&gt;     3: 48c8eccb-4bd0-487e-a187-4953cbbe956e              2d 0.08415213
+#&gt;     4: 951b9d94-9bf1-4771-877d-3a26b75d9e53              2d 0.08537603
+#&gt;     5: eedbf8b1-9432-4f42-ab7f-db5cd3eb2a05             360 0.10033651
+#&gt;    ---                                                                
+#&gt; 34672: ff4c28e2-66b1-4ae7-9053-fba8ec3428be      zoological 0.07271548
+#&gt; 34673: eee68e13-8248-43bb-a9fb-959832a6c217       zoologist 0.05222478
+#&gt; 34674: ff4c28e2-66b1-4ae7-9053-fba8ec3428be       zoologist 0.07546777
+#&gt; 34675: ff4c28e2-66b1-4ae7-9053-fba8ec3428be         zoology 0.12342853
+#&gt; 34676: e1fdca51-a0e1-4bea-822f-82a090ece780 zootechnologist 0.14447950</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

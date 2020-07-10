@@ -9,9 +9,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' get_language_code("occupations_en.csv")
-#' }
+#'
 get_language_code <- function(string){
   string <- gsub(".*_", "", string)
   gsub("\\..*", "", string)

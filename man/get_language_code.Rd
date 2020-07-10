@@ -17,7 +17,6 @@ Occupations' labels and structure are exposed at the ESCO web portal. This funct
 from the downloadable CSVs, see \href{https://ec.europa.eu/esco/portal/escopedia/ESCO_languages}{escopedia}.
 }
 \examples{
-\dontrun{
 get_language_code("occupations_en.csv")
-}
+
 }

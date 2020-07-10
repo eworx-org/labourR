@@ -23,14 +23,14 @@
 #' @import magrittr
 #'
 #' @examples
-#' \dontrun{
 #' library(data.table)
-#' corpus <- occupations_bundle[, text := paste(preferredLabel, altLabels)]
-#' corpus <- occupations_bundle[, text := cleansing_corpus(text)]
+#' corpus <- copy(occupations_bundle)
+#' invisible(corpus[, text := paste(preferredLabel, altLabels)])
+#' invisible(corpus[, text := cleansing_corpus(text)])
 #' corpus <- corpus[ , .(conceptUri, text)]
 #' setnames(corpus, c("id", "text"))
 #' tf_idf(corpus)
-#' }
+#'
 tf_idf <- function(
   corpus,
   stopwords = NULL,
@@ -39,8 +39,7 @@ tf_idf <- function(
   tf_weight = "double_norm",
   idf_weight = "idf_smooth",
   min_chars = 2,
-  norm = TRUE
-) {
+  norm = TRUE) {
 
   # due to NSE notes in R CMD check
   NULL -> term -> tf -> term_count -> idf -> docFreq -> tfIdf

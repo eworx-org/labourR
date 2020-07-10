@@ -13,13 +13,16 @@ Authors@R: c(
     person("Philippe", "Tissot", email = "philippe.tissot@cedefop.europa.eu", role = "ctb"),
     person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb")
             )
-Description: Statistical analysis and processing of data related to skills, 
-    competences, qualifications and occupations provide useful insight to 
-    policy-makers, education and training providers, employment services, 
-    guidance practitioners, researchers and citizens.  We introduce a suite 
-    of methods and data sets to address these problems. The package allows 
-    researchers to map free text to a broad range of standardized classifications, 
-    providing a user-friendly tool for exploring labour market data.
+Description: Statistical analysis and processing of data related to skills, competences, 
+    qualifications and occupations provide useful insight to policy-makers, education and training 
+    providers, employment services, guidance practitioners, researchers and citizens.  We introduce 
+    a suite of methods and data sets to address these problems. The package allows researchers to map 
+    free text to a broad range of standardized classifications, providing a user-friendly tool 
+    for exploring labour market data. For the string distance method used, see:
+    M.P.J. van der Loo (2014). 111-122. <doi:10.32614/RJ-2014-011>
+    For more information on occupation coding, see the following relevant papers: 
+    Gweon, H., Schonlau, M., Kaczmirek, L., Blohm, M., & Steiner, S. (2017). <doi:10.1515/jos-2017-0006>, Conrad, F. G., Couper, M. P., & Sakshaug, J. W. (2016). 
+    <doi:10.1515/jos-2016-0003> and Russ DE, Ho KY, Colt JS, et al. (2016). <doi:10.1136/oemed-2015-103152>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -1,4 +1,5 @@
 library(data.table)
+library(magrittr)
 
 isco_occupations_files <- list.files("data-raw/isco_bundle_occupations_1.0.3/", full.names = TRUE)
 
