@@ -1,8 +1,8 @@
-pandoc: '2.10'
+pandoc: 2.7.3
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
   labourR_blogpost: labourR_blogpost.html
   occupations_retrieval: occupations_retrieval.html
-last_built: 2020-07-13T12:58Z
+last_built: 2020-07-13T20:08Z
 
