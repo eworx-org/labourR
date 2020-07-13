@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# labourR <img src='man/figures/logo.png' align="right" height="130"/>
+# labourR <a href="http://alekoure.github.io/labourR/" rel="nofollow"><img src='man/figures/logo.png' align="right" height="130"/></a>
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/AleKoure/labourR.svg?branch=master)](https://travis-ci.org/AleKoure/labourR)
