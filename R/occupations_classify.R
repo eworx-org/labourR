@@ -37,9 +37,12 @@
 #'
 #' Gweon, H., Schonlau, M., Kaczmirek, L., Blohm, M., & Steiner, S. (2017). \href{https://doi.org/10.1515/jos-2017-0006}{Three Methods for Occupation Coding Based on Statistical Learning, Journal of Official Statistics}, 33(1), 101-122.
 #'
-#' Conrad, F. G., Couper, M. P., & Sakshaug, J. W. (2016). \href{https://doi.org/10.1515/jos-2016-0003}{Classifying Open-Ended Reports: Factors Affecting the Reliability of Occupation Codes, Journal of Official Statistics}, 32(1), 75-92.
+#' Arthur Turrell, Bradley J. Speigner, Jyldyz Djumalieva, David Copple, James Thurgood (2019).
+#' \href{https://www.nber.org/papers/w25837}{Transforming Naturally Occurring Text Data Into Economic Statistics:
+#' The Case of Online Job Vacancy Postings}.
 #'
-#' ESCO Service Platform - The ESCO Data Model \href{https://ec.europa.eu/esco/portal/document/en/87a9f66a-1830-4c93-94f0-5daa5e00507e}{documentation}
+#' ESCO Service Platform - \href{https://ec.europa.eu/esco/portal/document/en/87a9f66a-1830-4c93-94f0-5daa5e00507e}{
+#' The ESCO Data Model documentation}
 #'
 #' @import data.table
 #' @import magrittr

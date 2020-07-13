@@ -13,20 +13,18 @@ Authors@R: c(
     person("Nikos", "Vaslamatzis", email = "nfv@eworx.gr", role = "ctb"),
     person("Eworx S.A", role = "cph")
             )
-Description: Statistical analysis and processing of data related to skills, competences, 
-    qualifications and occupations provide useful insight to policy-makers, education and training 
-    providers, employment services, guidance practitioners, researchers and citizens.  We introduce 
-    a suite of methods and data sets to address these problems. The package allows researchers to map 
-    free text to a broad range of standardized classifications, providing a user-friendly tool 
-    for exploring labour market data. For the string distance method used, see:
-    M.P.J. van der Loo (2014). 111-122. <doi:10.32614/RJ-2014-011>
-    For more information on occupation coding, see the following relevant papers: 
-    Gweon, H., Schonlau, M., Kaczmirek, L., Blohm, M., & Steiner, S. (2017). <doi:10.1515/jos-2017-0006>, Conrad, F. G., Couper, M. P., & Sakshaug, J. W. (2016). 
-    <doi:10.1515/jos-2016-0003> and Russ DE, Ho KY, Colt JS, et al. (2016). <doi:10.1136/oemed-2015-103152>.
+Description: A suite of methods and data sets to assist statistical analysis and processing of data
+    related to the labour market. The package allows researchers to map multilingual 
+    free-text of occupations to a broad range of standardized classifications. String distance method
+    used for fuzzy matching is detailed in M.P.J. van der Loo (2014) <doi:10.32614/RJ-2014-011>. 
+    Publications relevant to the theoretical principles followed can be found in Arthur Turrell, 
+    Bradley J. Speigner, Jyldyz Djumalieva, David Copple, James Thurgood (2019) 
+    <https://www.nber.org/papers/w25837> and Gweon, H., Schonlau, M., Kaczmirek, L., 
+    Blohm, M., & Steiner, S. (2017) <doi:10.1515/jos-2017-0006>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/AleKoure/labourR
 BugReports: https://github.com/AleKoure/labourR/issues
