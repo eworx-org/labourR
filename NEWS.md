@@ -1,3 +1,5 @@
+# labourR (development version)
+
 # labourR 0.1.0
 
 * Initial release

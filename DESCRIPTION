@@ -1,7 +1,7 @@
 Package: labourR
 Type: Package
 Title: Classify Multilingual Labour Market Free-Text to Standardized Hierarchical Occupations
-Version: 1.0.0
+Version: 1.0.0.9000
 Authors@R: c(
     person("Alexandros", "Kouretsis", email = "ako@eworx.gr", role = c("aut", "cre")),
     person("Andreas", "Bampouris", email = "aba@eworx.gr", role = "aut"),
