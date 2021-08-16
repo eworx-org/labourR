@@ -5,12 +5,11 @@
 
 <!-- badges: start -->
 
-[![Travis build
-status](https://travis-ci.org/AleKoure/labourR.svg?branch=master)](https://travis-ci.org/AleKoure/labourR)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/AleKoure/labourR?branch=master&svg=true)](https://ci.appveyor.com/project/AleKoure/labourR)
 [![Codecov test
 coverage](https://codecov.io/gh/AleKoure/labourR/branch/master/graph/badge.svg)](https://codecov.io/gh/AleKoure/labourR?branch=master)
+[![R-CMD-check](https://github.com/AleKoure/labourR/workflows/R-CMD-check/badge.svg)](https://github.com/AleKoure/labourR/actions)
 <!-- badges: end -->
 
 The goal of labourR is to map multilingual free-text of occupations,
@@ -24,11 +23,8 @@ the International Standard Classification of Occupations.
 <div class="figure">
 
 <img src="man/figures/ESCO_ISCO_hierarchy.png" alt="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model." width="80%" />
-
 <p class="caption">
-
 Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model.
-
 </p>
 
 </div>
@@ -59,11 +55,9 @@ corpus <- data.frame(
 )
 ```
 
-  - If the ISCO level is specified, the top suggested ISCO group is
+-   If the ISCO level is specified, the top suggested ISCO group is
     returned. `num_leaves` specifies the number of ESCO occupations used
     for the k-NN classifier to perform a plurality vote,
-
-<!-- end list -->
 
 ``` r
 classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5)
@@ -73,10 +67,8 @@ classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5
 #> 3:  3       523                              Cashiers and ticket clerks
 ```
 
-  - If the ISCO level is not specified, the top num\_leaves, in this
+-   If the ISCO level is not specified, the top num\_leaves, in this
     case 5, suggested ESCO occupations are returned for each id,
-
-<!-- end list -->
 
 ``` r
 classify_occupation(corpus = corpus, isco_level = NULL, lang = "en", num_leaves = 5)
