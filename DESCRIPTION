@@ -23,7 +23,7 @@ Description: Allows the user to map multilingual free-text of occupations to a b
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/AleKoure/labourR
 BugReports: https://github.com/AleKoure/labourR/issues
