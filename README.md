@@ -5,11 +5,11 @@
 
 <!-- badges: start -->
 
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/AleKoure/labourR?branch=master&svg=true)](https://ci.appveyor.com/project/AleKoure/labourR)
 [![Codecov test
 coverage](https://codecov.io/gh/AleKoure/labourR/branch/master/graph/badge.svg)](https://codecov.io/gh/AleKoure/labourR?branch=master)
 [![R-CMD-check](https://github.com/AleKoure/labourR/workflows/R-CMD-check/badge.svg)](https://github.com/AleKoure/labourR/actions)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/labourR)](https://CRAN.R-project.org/package=labourR)
 <!-- badges: end -->
 
 The goal of labourR is to map multilingual free-text of occupations,
