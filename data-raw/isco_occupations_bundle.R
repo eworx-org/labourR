@@ -1,7 +1,7 @@
 library(data.table)
 library(magrittr)
 
-isco_occupations_files <- list.files("data-raw/isco_bundle_occupations_1.0.3/", full.names = TRUE)
+isco_occupations_files <- list.files("data-raw/isco_bundle_occupations_1.0.8/", full.names = TRUE)
 
 isco_occupations_bundle <- fread(
     input = isco_occupations_files[grep("_en", isco_occupations_files)],

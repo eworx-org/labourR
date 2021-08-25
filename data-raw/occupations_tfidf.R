@@ -1,7 +1,7 @@
 library(data.table)
 library(magrittr)
 
-esco_occupations_files <- list.files("data-raw/esco_bundle_occupations_1.0.3/", full.names = TRUE)
+esco_occupations_files <- list.files("data-raw/esco_bundle_occupations_1.0.8/", full.names = TRUE)
 esco_languages <- get_language_code(esco_occupations_files)
 names(esco_occupations_files) <- esco_languages
 

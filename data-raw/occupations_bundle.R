@@ -1,6 +1,6 @@
 library(data.table)
 
-esco_occupations_files <- list.files("data-raw/esco_bundle_occupations_1.0.3/", full.names = TRUE)
+esco_occupations_files <- list.files("data-raw/esco_bundle_occupations_1.0.8/", full.names = TRUE)
 
 occupations_bundle <- fread(
     input = esco_occupations_files[grep("_en", esco_occupations_files)],
