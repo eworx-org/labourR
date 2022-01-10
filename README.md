@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# labourR <a href="http://alekoure.github.io/labourR/" rel="nofollow"><img src='man/figures/logo.png' align="right" height="130"/></a>
+# labourR <a href="http://eworx-org.github.io/labourR/" rel="nofollow"><img src='man/figures/logo.png' align="right" height="130"/></a>
 
 <!-- badges: start -->
 
