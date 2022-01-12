@@ -33,7 +33,7 @@ Computations are vectorised and the `data.table` package is used for
 high performance and memory efficiency.
 
 See
-[Articles](https://alekoure.github.io/labourR/articles/occupations_retrieval.html)
+[Articles](https://eworx-org.github.io/labourR/articles/occupations_retrieval.html)
 section for details.
 
 ## Installation
