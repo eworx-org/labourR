@@ -6,10 +6,12 @@
 <!-- badges: start -->
 
 [![Codecov test
-coverage](https://codecov.io/gh/AleKoure/labourR/branch/master/graph/badge.svg)](https://codecov.io/gh/AleKoure/labourR?branch=master)
-[![R-CMD-check](https://github.com/AleKoure/labourR/workflows/R-CMD-check/badge.svg)](https://github.com/AleKoure/labourR/actions)
+coverage](https://codecov.io/gh/aleKoure/labourR/branch/master/graph/badge.svg)](https://codecov.io/gh/eworx-org/labourR?branch=master)
+[![R-CMD-check](https://github.com/eworx-org/labourR/workflows/R-CMD-check/badge.svg)](https://github.com/eworx-org/labourR/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/labourR)](https://CRAN.R-project.org/package=labourR)
+[![Total
+Downloads](http://cranlogs.r-pkg.org/badges/grand-total/labourR?color=green)](https://cran.r-project.org/package=labourR)
 <!-- badges: end -->
 
 The goal of labourR is to map multilingual free-text of occupations,
@@ -20,14 +22,7 @@ Occupations, and
 [ISCO](https://ec.europa.eu/esco/portal/escopedia/International_Standard_Classification_of_Occupations__40_ISCO_41_),
 the International Standard Classification of Occupations.
 
-<div class="figure">
-
-<img src="man/figures/ESCO_ISCO_hierarchy.png" alt="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model." width="80%" />
-<p class="caption">
-Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model.
-</p>
-
-</div>
+<img src="man/figures/ESCO_ISCO_hierarchy.png" title="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model." alt="Fig.1 - ESCO is mapped to the 4th level of the ISCO hierarchical model." width="80%" />
 
 Computations are vectorised and the `data.table` package is used for
 high performance and memory efficiency.
@@ -67,8 +62,8 @@ classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5
 #> 3:  3       523                              Cashiers and ticket clerks
 ```
 
--   If the ISCO level is not specified, the top num\_leaves, in this
-    case 5, suggested ESCO occupations are returned for each id,
+-   If the ISCO level is not specified, the top num_leaves, in this case
+    5, suggested ESCO occupations are returned for each id,
 
 ``` r
 classify_occupation(corpus = corpus, isco_level = NULL, lang = "en", num_leaves = 5)
